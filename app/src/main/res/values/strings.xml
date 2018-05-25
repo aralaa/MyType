@@ -22,6 +22,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="permission_setting_restart">권한을 설정하고 다시 실행해 주세요!</string>
+    <string name="email">이메일</string>
+    <string name="pw">비밀번호</string>
+    <string name="name">이름</string>
+    <string name="birth">생년월일</string>
+    <string name="gender">성별</string>
+    <string name="female">여자</string>
+    <string name="male">남자</string>
 
 
 </resources>
