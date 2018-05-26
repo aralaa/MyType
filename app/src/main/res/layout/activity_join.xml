@@ -193,4 +193,10 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/join_btn_join"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/join"/>
+
 </LinearLayout>
