@@ -29,6 +29,7 @@
     <string name="gender">성별</string>
     <string name="female">여자</string>
     <string name="male">남자</string>
+    <string name="join">회원가입</string>
 
 
 </resources>
