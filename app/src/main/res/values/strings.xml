@@ -30,6 +30,8 @@
     <string name="female">여자</string>
     <string name="male">남자</string>
     <string name="loading_name">취향 저격</string>
+    <string name="join">가입하기</string>
+    <string name="login">로그인</string>
 
 
 </resources>
