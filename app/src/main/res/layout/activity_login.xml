@@ -22,19 +22,43 @@
          />
     <TextView
         android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:gravity="center_horizontal"
         android:text="에 오신걸 환영합니다!"
         android:textSize="20sp"
         android:textColor="#FFFFFF"
         />
 
+    <EditText
+        android:id="@+id/edit_id"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Email 입력"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"/>
+
+    <EditText
+        android:id="@+id/edit_pwd"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:inputType="textPassword"
+        android:hint="Password 입력"
+        android:maxLines="1"/>
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="로그인"
+        android:background="#FFFFFF"
+        />
     <TextView
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_width="300dp"
         android:layout_height="25dp"
         android:gravity="center_horizontal"
-        android:text="Google 로그인"
+        android:text="Google로 간편 로그인"
         android:textSize="15sp"
         android:textColor="#FFFFFF"
         android:textStyle="bold"

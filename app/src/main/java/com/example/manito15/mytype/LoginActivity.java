@@ -6,6 +6,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 import android.support.annotation.NonNull;
@@ -30,6 +32,9 @@ public class LoginActivity extends AppCompatActivity  implements GoogleApiClient
     private GoogleApiClient mGoogleApiClient;
     private FirebaseAuth mAuth;
 
+    private EditText editTextEmail;
+    private EditText editTextPassword;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +51,8 @@ public class LoginActivity extends AppCompatActivity  implements GoogleApiClient
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
-        SignInButton button = (SignInButton)findViewById(R.id.login_btn);
-        button.setOnClickListener(new View.OnClickListener() {
+        SignInButton googleLogin  = (SignInButton)findViewById(R.id.login_btn);
+        googleLogin .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
@@ -55,9 +60,43 @@ public class LoginActivity extends AppCompatActivity  implements GoogleApiClient
             }
         });
 
+        editTextEmail = (EditText) findViewById(R.id.edit_id);
+        editTextPassword = (EditText) findViewById(R.id.edit_pwd);
+
+        Button emailLogin = (Button) findViewById(R.id.button_login);
+        emailLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                createUser(editTextEmail.getText().toString(), editTextPassword.getText().toString());
+
+            }
+        });
+
 
     }
 
+    private void createUser(String email, String password) {
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+
+                        // If sign in fails, display a message to the user. If sign in succeeds
+                        // the auth state listener will be notified and logic to handle the
+                        // signed in user can be handled in the listener.
+                        if (!task.isSuccessful()) {
+                            Toast.makeText(getApplicationContext(), "비밀번호를 확인하세요", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getApplicationContext(), "회원가입 성공", Toast.LENGTH_SHORT).show();
+                            Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                            startActivity(intent);
+                        }
+
+                        // ...
+                    }
+                });
+    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
