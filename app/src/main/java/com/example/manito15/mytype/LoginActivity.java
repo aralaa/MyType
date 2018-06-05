@@ -1,70 +1,114 @@
 package com.example.manito15.mytype;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
+
+import android.widget.Toast;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Toast;
 
-public class LoginActivity extends AppCompatActivity {
-    public static final int REQUEST_CODE_JOIN=101;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.GoogleAuthProvider;
 
-    EditText login_edt_email, login_edt_pw;
-    String ID,PWD;
+public class LoginActivity extends AppCompatActivity  implements GoogleApiClient.OnConnectionFailedListener{
 
+
+    private static final int RC_SIGN_IN = 10;
+    private GoogleApiClient mGoogleApiClient;
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        mAuth = FirebaseAuth.getInstance();
 
-        login_edt_email=(EditText) findViewById(R.id.login_edt_email); //findViewById()는 무조건 onCreate()안에서 해줘야 함.(아주 중요)
-        login_edt_pw=(EditText) findViewById(R.id.login_edt_pw);
+
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+                .build();
+
+        SignInButton button = (SignInButton)findViewById(R.id.login_btn);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
+                startActivityForResult(signInIntent, RC_SIGN_IN);
+            }
+        });
+
+
+
 
     }
 
-    public void onLoginClicked(View view) {
-        // id, pwd check
-        SharedPreferences pref = getSharedPreferences("a", MODE_PRIVATE);
 
-        ID = pref.getString("ID", "");
-        PWD = pref.getString("PWD", "");
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
-        if(ID.equals(login_edt_email.getText().toString()) && PWD.equals(login_edt_pw.getText().toString())){
-
-            Intent intent =new Intent(getApplicationContext(), MainActivity.class);
-            intent.putExtra("name",login_edt_email.getText().toString());
-            startActivity(intent);
-
+        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+        if (requestCode == RC_SIGN_IN) {
+            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+            if (result.isSuccess()) {
+                // Google Sign In was successful, authenticate with Firebase
+                GoogleSignInAccount account = result.getSignInAccount();
+                firebaseAuthWithGoogle(account);
+            } else {
+                // Google Sign In failed, update UI appropriately
+                // ...
+            }
         }
-        else{  // id나 pwd가 불일치할 때
-            Toast.makeText(getApplicationContext(),"등록되지 않은 ID 혹은 틀린 패스워드입니다.",Toast.LENGTH_LONG).show();
-        }
-
     }
 
-    public void onJoinClicked(View view) {
+    private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
 
-        Intent intent =new Intent(getApplicationContext(), JoinActivity.class);
-        startActivityForResult(intent, REQUEST_CODE_JOIN);
 
-        // 회원가입 화면에 가면 아이디 입력창과 비밀번호 입력창이 비워지도록 설정
-        login_edt_email.setText("");
-        login_edt_email.setHint("아이디 입력");
-        login_edt_pw.setText("");
-        login_edt_pw.setHint("비밀번호 입력");
+        AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
 
+
+                        // If sign in fails, display a message to the user. If sign in succeeds
+                        // the auth state listener will be notified and logic to handle the
+                        // signed in user can be handled in the listener.
+                        if (!task.isSuccessful()) {
+
+                        }else {
+                            Toast.makeText(LoginActivity.this, "FireBase아이디 생성이 완료 되었습니다", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
-        if(requestCode==REQUEST_CODE_JOIN){
-            if(resultCode==RESULT_OK){
-                Toast.makeText(getApplicationContext(),"회원가입 완료",Toast.LENGTH_LONG).show();
-            }
-        }
     }
 }

@@ -1,5 +1,6 @@
 package com.example.manito15.mytype;
 
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;

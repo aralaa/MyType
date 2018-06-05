@@ -9,6 +9,7 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scrollbars="vertical"
         android:dividerHeight="@dimen/spacing_small" />
 
     <TextView
@@ -21,4 +22,6 @@
         android:text="@string/no_data"
         android:textSize="@dimen/text_size_small2"
         android:textStyle="bold" />
+
+
 </RelativeLayout>
