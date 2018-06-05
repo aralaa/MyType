@@ -42,6 +42,8 @@
     <string name="grandparents">조부모님</string>
     <string name="friends">친구</string>
     <string name="login">로그인</string>
+    <string name="receiver">받은 사람</string>
+
 
 
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,8 +12,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="받는 사람"
+        android:text="@string/receiver"
         android:textSize="20sp"
+        android:textColor="@color/colorPrimaryDark"
         android:layout_marginBottom="10dp"/>
 
     <LinearLayout
@@ -27,7 +29,7 @@
         android:layout_height="match_parent">
 
         <RadioButton
-            android:text="남자"
+            android:text="@string/male"
             android:id="@+id/rg_btn_male"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -35,7 +37,7 @@
             android:button="@drawable/male" />
 
         <RadioButton
-            android:text="여자"
+            android:text="@string/female"
             android:layout_weight="1"
             android:button="@drawable/female"
             android:id="@+id/rg_btn_female"
@@ -43,79 +45,193 @@
             android:layout_height="wrap_content" />
 
     </RadioGroup>
+        <View
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimaryGrey"/>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-</LinearLayout>
+                <Button android:id="@+id/button_r1"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:text="가족"
+                    android:background="@drawable/button_selector" />
+
+                <Button android:id="@+id/button_r2"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:text="부모님"
+                    android:background="@drawable/button_selector" />
+
+                <Button android:id="@+id/button_r3"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:text="조부모님"
+                    android:background="@drawable/button_selector" />
+
+                <Button android:id="@+id/button_r4"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:text="친구"
+                    android:background="@drawable/button_selector" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button android:id="@+id/button_r5"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:text="연인"
+                    android:background="@drawable/button_selector" />
+
+                <Button android:id="@+id/button_r6"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:text="직장동료"
+                    android:background="@drawable/button_selector" />
+
+                <Button android:id="@+id/button_r7"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:text="선생님"
+                    android:background="@drawable/button_selector" />
+
+            </LinearLayout>
+        </LinearLayout>
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryGrey"/>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
-        <RadioGroup
-            android:id="@+id/radioGroup_relation"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <Button android:id="@+id/button_a1"
+        android:layout_width="80dp"
+        android:layout_height="28dp"
+        android:text="10대"
+        android:background="@drawable/button_selector" />
 
-            <RadioButton
-                android:text="가족"
-                android:id="@+id/rg_btn_r1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:button="@null"/>
+    <Button android:id="@+id/button_a2"
+        android:layout_width="80dp"
+        android:layout_height="28dp"
+        android:text="20대"
+        android:background="@drawable/button_selector" />
 
-            <RadioButton
-                android:text="부모님"
-                android:layout_weight="0.25"
-                android:button="@null"
-                android:id="@+id/rg_btn_r2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content" />
+    <Button android:id="@+id/button_a3"
+        android:layout_width="80dp"
+        android:layout_height="28dp"
+        android:text="30대"
+        android:background="@drawable/button_selector" />
 
-            <RadioButton
-                android:text="조부모님"
-                android:id="@+id/rg_btn_r3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.32"
-                android:button="@null"/>
+    <Button android:id="@+id/button_a4"
+        android:layout_width="80dp"
+        android:layout_height="28dp"
+        android:text="40대"
+        android:background="@drawable/button_selector" />
+</LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <Button android:id="@+id/button_a5"
+        android:layout_width="80dp"
+        android:layout_height="28dp"
+        android:text="50대"
+        android:background="@drawable/button_selector" />
 
-            <RadioButton
-                android:text="친구"
-                android:layout_weight="0.2"
-                android:button="@null"
-                android:id="@+id/rg_btn_r4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content" />
+    <Button android:id="@+id/button_a6"
+        android:layout_width="80dp"
+        android:layout_height="28dp"
+        android:text="60대"
+        android:background="@drawable/button_selector" />
 
-            <RadioButton
-                android:text="연인"
-                android:id="@+id/rg_btn_r5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:button="@null"/>
-
-            <RadioButton
-            android:text="직장동료"
-            android:layout_weight="0.3"
-            android:button="@null"
-            android:id="@+id/rg_btn_r6"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-
-            <RadioButton
-                android:text="선생님"
-                android:layout_weight="0.3"
-                android:button="@null"
-                android:id="@+id/rg_btn_r7"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content" />
-
-        </RadioGroup>
-
-    </LinearLayout>
+    <Button android:id="@+id/button_a7"
+        android:layout_width="80dp"
+        android:layout_height="28dp"
+        android:text="70대"
+        android:background="@drawable/button_selector" />
+    <Button android:id="@+id/button_a8"
+        android:layout_width="80dp"
+        android:layout_height="28dp"
+        android:text="80대"
+        android:background="@drawable/button_selector" />
 
 </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button android:id="@+id/button_aa1"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:text="초반"
+                android:background="@drawable/button_selector" />
+
+            <Button android:id="@+id/button_aa2"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:text="중반"
+                android:background="@drawable/button_selector" />
+
+            <Button android:id="@+id/button_aa3"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:text="후반"
+                android:background="@drawable/button_selector" />
+
+        </LinearLayout>
+</LinearLayout>
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryGrey"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="받은 사람의 만족도"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginBottom="10dp"/>
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryGrey"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="선물의 가격대"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginBottom="10dp"/>
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="필터로 검색하기"
+    android:background="@color/colorPrimary"/>
+</LinearLayout>
+
 

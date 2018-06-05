@@ -5,4 +5,5 @@
     <color name="colorPrimaryGrey">#8C8D8D</color>
     <color name="colorAccent">#FC9B4B</color>
     <color name="colorWine">#B70037</color>
+    <color name="colorPrimaryLightGrey">#D8D8D8</color>
 </resources>
