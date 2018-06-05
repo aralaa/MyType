@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/layout"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".fragment.ProfileFragment">
 
     <include layout="@layout/tool_bar" />
 
@@ -16,7 +17,7 @@
         android:orientation="vertical">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/join_image"
+            android:id="@+id/profile_img"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:layout_gravity="top"
@@ -44,7 +45,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:id="@+id/join_txt_email"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/spacing_medium"
@@ -55,7 +55,7 @@
             />
 
         <EditText
-            android:id="@+id/join_edt_email"
+            android:id="@+id/profile_txt_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="start"
@@ -68,7 +68,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:id="@+id/join_txt_pw"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/spacing_medium"
@@ -79,7 +78,7 @@
             />
 
         <EditText
-            android:id="@+id/join_edt_pw"
+            android:id="@+id/profile_edt_pw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="start"
@@ -92,7 +91,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:id="@+id/join_txt_name"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/spacing_medium"
@@ -103,7 +101,7 @@
             />
 
         <EditText
-            android:id="@+id/join_edt_name"
+            android:id="@+id/profile_edt_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="start"
@@ -116,7 +114,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:id="@+id/join_txt_birth"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/spacing_medium"
@@ -127,17 +124,17 @@
             />
 
         <EditText
-        android:id="@+id/join_edt_year"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:gravity="start"
-        android:textSize="@dimen/text_size_medium"/>
+            android:id="@+id/profile_edt_year"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:textSize="@dimen/text_size_medium"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="년"/>
         <EditText
-            android:id="@+id/join_edt_month"
+            android:id="@+id/profile_edt_month"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:gravity="start"
@@ -147,7 +144,7 @@
             android:layout_height="wrap_content"
             android:text="월"/>
         <EditText
-            android:id="@+id/join_edt_day"
+            android:id="@+id/profile_edt_day"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:gravity="start"
@@ -162,7 +159,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:id="@+id/join_txt_gender"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/spacing_medium"
@@ -173,20 +169,20 @@
             />
 
         <RadioGroup
-            android:id="@+id/join_rg_gender"
+            android:id="@+id/profile_rg_gender"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
 
             <RadioButton
-                android:id="@+id/join_rd_female"
+                android:id="@+id/profile_rd_female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/female" />
 
             <RadioButton
-                android:id="@+id/join_rd_male"
+                android:id="@+id/profile_rd_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
@@ -196,9 +192,10 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/join_btn_join"
+        android:id="@+id/profile_btn_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/join"/>
+        android:text="@string/edit"/>
+
 
 </LinearLayout>

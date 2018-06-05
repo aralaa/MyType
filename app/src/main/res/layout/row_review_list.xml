@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_small2">
+
+            <!-- 1. 프로필 사진-->
+            <ImageView
+                android:id="@+id/review_img_profile"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                />
+
+            <!-- 2. 이름, 성별, 나이, 날짜-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/spacing_medium"
+                android:layout_weight="1">
+                <!-- 이름, 성별, 나이 -->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/review_txt_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="이름"/>
+                    <TextView
+                        android:id="@+id/review_txt_age1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/spacing_small2"
+                        android:hint="20대"/>
+                    <TextView
+                        android:id="@+id/review_txt_age2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/spacing_small"
+                        android:hint="초"/>
+                </LinearLayout>
+                <!-- 날짜-->
+                <TextView
+                    android:id="@+id/review_txt_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="날짜"/>
+
+            </LinearLayout>
+
+            <!-- 3. 좋아요 -->
+            <ImageView
+                android:id="@+id/review_img_like"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_weight="9"
+                android:layout_gravity="center_vertical"
+                android:gravity="right"
+                android:src="@drawable/ic_favorite_off_black_24dp" />
+        </LinearLayout>
+
+        <!-- 카드뷰 (사진) -->
+        <ImageView
+            android:id="@+id/review_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"/>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

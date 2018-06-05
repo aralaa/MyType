@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyType</string>
+    <string name="app_name">취향저격</string>
 
     <!-- Bottom Navigation Menu -->
     <string name="title_home">홈</string>
@@ -30,6 +30,17 @@
     <string name="female">여자</string>
     <string name="male">남자</string>
     <string name="loading_name">취향 저격</string>
+    <string name="join">가입하기</string>
+    <string name="no_data">데이터가 없습니다.</string>
+    <string name="title_join">회원가입</string>
+    <string name="tab_story">스토리</string>
+    <string name="tab_like">좋아요</string>
+    <string name="tab_profile">프로필</string>
+    <string name="edit">수정하기</string>
+    <string name="family">가족</string>
+    <string name="parents">부모님</string>
+    <string name="grandparents">조부모님</string>
+    <string name="friends">친구</string>
 
 
 </resources>
