@@ -1,17 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/frameLayout"
+    android:padding="20dp"
     tools:context=".fragment.SearchFragment">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="검색화면"/>
-    <!-- TODO: Update blank fragment layout -->
+        android:text="받는 사람"
+        android:textSize="20sp"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/radioGroup_gender"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioButton
+            android:text="남자"
+            android:id="@+id/rg_btn_male"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:button="@drawable/male" />
+
+        <RadioButton
+            android:text="여자"
+            android:layout_weight="1"
+            android:button="@drawable/female"
+            android:id="@+id/rg_btn_female"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
 
 </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/radioGroup_relation"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:text="가족"
+                android:id="@+id/rg_btn_r1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:button="@null"/>
+
+            <RadioButton
+                android:text="부모님"
+                android:layout_weight="0.25"
+                android:button="@null"
+                android:id="@+id/rg_btn_r2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:text="조부모님"
+                android:id="@+id/rg_btn_r3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.32"
+                android:button="@null"/>
+
+            <RadioButton
+                android:text="친구"
+                android:layout_weight="0.2"
+                android:button="@null"
+                android:id="@+id/rg_btn_r4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:text="연인"
+                android:id="@+id/rg_btn_r5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:button="@null"/>
+
+            <RadioButton
+            android:text="직장동료"
+            android:layout_weight="0.3"
+            android:button="@null"
+            android:id="@+id/rg_btn_r6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:text="선생님"
+                android:layout_weight="0.3"
+                android:button="@null"
+                android:id="@+id/rg_btn_r7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+</LinearLayout>
+

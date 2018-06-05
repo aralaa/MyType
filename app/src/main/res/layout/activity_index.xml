@@ -8,13 +8,13 @@
     tools:context=".IndexActivity">
 
     <TextView
+        android:layout_marginTop="112dp"
         android:id="@+id/app_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:gravity="center_horizontal"
         android:text="@string/loading_name"
-        android:textSize="50sp"
+        android:textSize="55sp"
         android:textColor="#FFFFFF"/>
 
 </RelativeLayout>
