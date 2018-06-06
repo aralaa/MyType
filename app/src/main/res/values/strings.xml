@@ -43,7 +43,7 @@
     <string name="friends">친구</string>
     <string name="login">로그인</string>
     <string name="receiver">받은 사람</string>
-
+    <string name="location">위치 등록</string>
 
 
 </resources>

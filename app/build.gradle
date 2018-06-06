@@ -34,14 +34,12 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.android.support:support-v13:27.1.1'
-
     //검색 ui 깃헙
     implementation 'com.github.aliwaris0572:CustomSearch:v1.0.0'
-
     //firebase연동
     implementation 'com.google.firebase:firebase-auth:11.6.2'
     implementation 'com.google.android.gms:play-services-auth:11.6.2'
     implementation 'com.google.firebase:firebase-core:11.6.2'
-
+    implementation 'com.google.android.gms:play-services-maps:11.6.2' //google Map 서비스
 }
 apply plugin: 'com.google.gms.google-services'
