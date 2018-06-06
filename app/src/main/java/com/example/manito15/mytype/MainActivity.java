@@ -1,8 +1,6 @@
 package com.example.manito15.mytype;
 
-import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -52,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 //Intent intent = new Intent(this,LoginActivity.class);
                 //startActivity(intent);
                 ///////////////
+
                 return true;
             case R.id.nav_mytype:
                 MyTypeFragment myTypeFragment = new MyTypeFragment();
@@ -76,9 +75,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         HomeFragment homeFragment = new HomeFragment();
         manager.beginTransaction().replace(R.id.contentLayout, homeFragment, homeFragment.getTag()).commit();
 
-
-
     }
+
 
     private void setToolbar(int title){
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
