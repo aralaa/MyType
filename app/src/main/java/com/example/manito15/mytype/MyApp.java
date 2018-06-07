@@ -34,8 +34,8 @@ public class MyApp extends Application{
         this.memberInfoItem = item;
     }
 
-    public int getMemberSeq(){
-        return memberInfoItem.seq;
+    public int getMemberId(){
+        return memberInfoItem.memberId;
     }
 
     public ReviewItem getReviewItem() {
