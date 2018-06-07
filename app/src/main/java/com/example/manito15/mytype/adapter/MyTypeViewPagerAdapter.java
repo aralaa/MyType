@@ -3,35 +3,35 @@ package com.example.manito15.mytype.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import com.example.manito15.mytype.fragment.LikeFragment;
-import com.example.manito15.mytype.fragment.ProfileFragment;
-import com.example.manito15.mytype.fragment.StoryFragment;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MyTypeViewPagerAdapter extends FragmentPagerAdapter {
 
-    private int numOfTabs;
+    private final List<Fragment> fragmentList = new ArrayList<>();
+    private final List<String> FragmentListTitles = new ArrayList<>();
 
-    public MyTypeViewPagerAdapter(FragmentManager fm, int numOfTabs) {
+    public MyTypeViewPagerAdapter(FragmentManager fm) {
         super(fm);
-        this.numOfTabs = numOfTabs;
     }
 
     @Override
     public Fragment getItem(int position) {
-        switch (position) {
-            case 0:
-                return new StoryFragment();
-            case 1:
-                return new LikeFragment();
-            case 2:
-                return new ProfileFragment();
-                default:
-                    return null;
-        }
+        return fragmentList.get(position);
     }
 
     @Override
     public int getCount() {
-        return numOfTabs;
+        return FragmentListTitles.size();
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return FragmentListTitles.get(position);
+    }
+
+    public void AddFragment(Fragment fragment, String Title){
+        fragmentList.add(fragment);
+        FragmentListTitles.add(Title);
     }
 }

@@ -1,9 +1,8 @@
 package com.example.manito15.mytype.fragment;
 
-
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +15,7 @@ import com.example.manito15.mytype.R;
  * A simple {@link Fragment} subclass.
  */
 public class HomeFragment extends Fragment implements View.OnClickListener {
+
     private final String TAG = this.getClass().getSimpleName();
 
     Context context;
@@ -23,7 +23,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     RecyclerView reviewList;
     TextView noDataText;
-
 
     public HomeFragment() {
         // Required empty public constructor
@@ -41,4 +40,5 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
 
     }
+
 }

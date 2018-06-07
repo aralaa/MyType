@@ -43,8 +43,24 @@
     <string name="friends">친구</string>
     <string name="login">로그인</string>
     <string name="receiver">받은 사람</string>
+    <string name="coworker">직장동료</string>
+    <string name="lover">연인</string>
+    <string name="teacher">선생님</string>
+    <string name="teenager">10대</string>
+    <string name="twenty">20대</string>
+    <string name="thirty">30대</string>
+    <string name="fifty">50대</string>
+    <string name="sixty">60대</string>
+    <string name="seventy">70대</string>
+    <string name="eighty">80대</string>
+    <string name="early">초반</string>
+    <string name="mid">중반</string>
+    <string name="late">후반</string>
+    <string name="online">온라인</string>
+    <string name="offline">오프라인</string>
+    <string name="input_gift_review">선물 후기를 작성해주세요.</string>
+    <string name="input_review_hashtag">#으로 해쉬태그를 입력하세요.</string>
     <string name="location">위치 등록</string>
     <string name="register">등록</string>
-
 
 </resources>

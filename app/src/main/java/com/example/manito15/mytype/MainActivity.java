@@ -1,28 +1,25 @@
 package com.example.manito15.mytype;
 
-import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.ActionBar;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.manito15.mytype.fragment.HomeFragment;
 import com.example.manito15.mytype.fragment.MyTypeFragment;
-import com.example.manito15.mytype.fragment.ReviewRegisterFragment;
 import com.example.manito15.mytype.fragment.SearchFragment;
 import com.example.manito15.mytype.helper.BottomNavigationViewHelper;
-import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * Bottom Navigation View를 가지며 다양한 프래그먼트를 보여주는 컨테이너 역할을 한다.
  */
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    FragmentManager manager = getFragmentManager();
-    private FirebaseAuth auth;
+    FragmentManager manager = getSupportFragmentManager();
+
     /**
      * 네비게이션 메뉴를 클릭했을 때 호출되는 메소드
      */
@@ -32,30 +29,26 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         switch (item.getItemId()) {
             case R.id.nav_home:
                 HomeFragment homeFragment = new HomeFragment();
-                manager.beginTransaction().replace(R.id.contentLayout, homeFragment, homeFragment.getTag()).commit();
-                setToolbar(R.string.app_name);
+                manager.beginTransaction().replace(R.id.content_main, homeFragment, homeFragment.getTag()).commit();
                 return true;
             case R.id.nav_search:
                 SearchFragment searchFragment = new SearchFragment();
-                manager.beginTransaction().replace(R.id.contentLayout, searchFragment, searchFragment.getTag()).commit();
-
+                manager.beginTransaction().replace(R.id.content_main, searchFragment, searchFragment.getTag()).commit();
                 return true;
             case R.id.nav_review:
-                ReviewRegisterFragment reviewRegisterFragment = new ReviewRegisterFragment();
-                manager.beginTransaction().replace(R.id.contentLayout, reviewRegisterFragment, reviewRegisterFragment.getTag()).commit();
-                setToolbar(R.string.title_review);
+                Intent intent = new Intent(getApplicationContext(), ReviewRegisterActivity.class);
+                startActivity(intent);
+                finish();
                 ///////////////  로그아웃
                 //auth.signOut();
                 //finish();
                 //Intent intent = new Intent(this,LoginActivity.class);
                 //startActivity(intent);
                 ///////////////
-
                 return true;
             case R.id.nav_mytype:
                 MyTypeFragment myTypeFragment = new MyTypeFragment();
-                manager.beginTransaction().replace(R.id.contentLayout, myTypeFragment, myTypeFragment.getTag()).commit();
-                setToolbar(R.string.title_mytype);
+                manager.beginTransaction().replace(R.id.content_main, myTypeFragment, myTypeFragment.getTag()).commit();
                 return true;
         }
         return false;
@@ -65,7 +58,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        auth = FirebaseAuth.getInstance(); //파이어베이스
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
@@ -73,22 +65,23 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         BottomNavigationViewHelper.disableShiftMode(navigation);
 
         HomeFragment homeFragment = new HomeFragment();
-        manager.beginTransaction().replace(R.id.contentLayout, homeFragment, homeFragment.getTag()).commit();
+        manager.beginTransaction().replace(R.id.content_main, homeFragment, homeFragment.getTag()).commit();
 
     }
 
-
-    private void setToolbar(int title){
-        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        final ActionBar actionBar = getSupportActionBar();
-
-        if(actionBar != null){
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle(title);
-        }
-    }
-
-
+    /**
+     * 툴바
+     */
+//    private void setToolbar(int title) {
+//        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//        final ActionBar actionBar = getSupportActionBar();
+//
+//        if (actionBar != null) {
+//            actionBar.setDisplayHomeAsUpEnabled(true);
+//
+//        }
+//    }
 
 }
+

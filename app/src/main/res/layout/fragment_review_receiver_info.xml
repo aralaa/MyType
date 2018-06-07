@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="받은사람" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/male" />
+
+            <Button
+                android:id="@+id/btn_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/female" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_family"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/family" />
+
+            <Button
+                android:id="@+id/btn_parents"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/parents" />
+
+            <Button
+                android:id="@+id/btn_grandparents"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/grandparents" />
+
+            <Button
+                android:id="@+id/btn_friends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/friends" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_lover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lover" />
+
+            <Button
+                android:id="@+id/btn_coworker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/coworker" />
+
+            <Button
+                android:id="@+id/btn_teacher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/teacher" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_teenager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/teenager" />
+
+            <Button
+                android:id="@+id/btn_twenty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/twenty" />
+
+            <Button
+                android:id="@+id/btn_thirty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/thirty" />
+
+            <Button
+                android:id="@+id/btn_forty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40대" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_fifty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fifty" />
+
+            <Button
+                android:id="@+id/btn_sixty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sixty" />
+
+            <Button
+                android:id="@+id/btn_seventy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/seventy" />
+
+            <Button
+                android:id="@+id/btn_eighty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/eighty" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_early"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/early" />
+
+            <Button
+                android:id="@+id/btn_mid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mid" />
+
+            <Button
+                android:id="@+id/btn_late"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/late" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="받은사람의 만족도" />
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="구매장소" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_online"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/online" />
+
+            <EditText
+                android:id="@+id/btn_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="주소를 입력해주세요."
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/select_offline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/offline" />
+
+            <Button
+                android:id="@+id/select_addlocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="위치추가"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edt_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="선물의 가격을 입력해주세요."/>
+
+        <Button
+            android:id="@+id/btn_info_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/next"/>
+
+    </LinearLayout>
+
+</ScrollView>
