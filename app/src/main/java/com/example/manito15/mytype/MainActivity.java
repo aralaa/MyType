@@ -6,7 +6,10 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.manito15.mytype.fragment.HomeFragment;
@@ -38,12 +41,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.nav_search:
                 SearchFragment searchFragment = new SearchFragment();
                 manager.beginTransaction().replace(R.id.contentLayout, searchFragment, searchFragment.getTag()).commit();
-
+                setToolbar(R.string.title_search);
+                //onCreateOptionsMenu(munu);
                 return true;
             case R.id.nav_review:
                 ReviewRegisterFragment reviewRegisterFragment = new ReviewRegisterFragment();
                 manager.beginTransaction().replace(R.id.contentLayout, reviewRegisterFragment, reviewRegisterFragment.getTag()).commit();
                 setToolbar(R.string.title_review);
+
                 ///////////////  로그아웃
                 //auth.signOut();
                 //finish();
@@ -89,6 +94,26 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
     }
 
+    // @Override
+    //public boolean onCreateOptionsMenu(Menu menu) {
+    //    MenuInflater inflater=getMenuInflater();
+    //    inflater.inflate(R.menu.search,menu);
+    //    MenuItem item =menu.findItem(R.id.menu_search);
+    //
+    //    SearchView searchView=(SearchView)item.getActionView();
+    //    searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+     //       @Override
+    //        public boolean onQueryTextSubmit(String newText) {
+    //            //adapter.getFilter().filter(newText);
+    //            return false;
+    //        }
 
+    //            @Override
+    //        public boolean onQueryTextChange(String newText) {
+    //            return false;
+     //       }
+     //   });
 
+     //   return super.onCreateOptionsMenu(menu);
+    //}
 }
