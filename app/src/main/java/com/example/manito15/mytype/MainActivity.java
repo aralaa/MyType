@@ -39,12 +39,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 Intent intent = new Intent(getApplicationContext(), ReviewRegisterActivity.class);
                 startActivity(intent);
                 finish();
-                ///////////////  로그아웃
-                //auth.signOut();
-                //finish();
-                //Intent intent = new Intent(this,LoginActivity.class);
-                //startActivity(intent);
-                ///////////////
                 return true;
             case R.id.nav_mytype:
                 MyTypeFragment myTypeFragment = new MyTypeFragment();

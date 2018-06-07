@@ -2,6 +2,7 @@ package com.example.manito15.mytype.fragment;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.manito15.mytype.MainActivity;
 import com.example.manito15.mytype.R;
 import com.example.manito15.mytype.lib.GoLib;
 
@@ -50,6 +52,7 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
         super.onViewCreated(view, savedInstanceState);
 
         Button btn_info_next = (Button) v.findViewById(R.id.btn_info_next);
+        Button select_addlocation=(Button) v.findViewById(R.id.select_addlocation);
         btn_info_next.setOnClickListener(this);
 
     }
@@ -59,5 +62,9 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
         if(v.getId() == R.id.btn_info_next){
             GoLib.getInstance().goFragmentBack(((AppCompatActivity)getActivity()).getSupportFragmentManager(), R.id.content_main, new ReviewWriteFragment());
         }
+        if(v.getId() == R.id.select_addlocation){
+            //map fragment로 가는 것 코딩 필요
+        }
+
     }
 }

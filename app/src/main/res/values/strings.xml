@@ -62,5 +62,6 @@
     <string name="input_review_hashtag">#으로 해쉬태그를 입력하세요.</string>
     <string name="location">위치 등록</string>
     <string name="register">등록</string>
+    <string name="logout">로그아웃</string>
 
 </resources>
