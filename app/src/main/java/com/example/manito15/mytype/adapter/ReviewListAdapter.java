@@ -55,48 +55,6 @@ public class ReviewListAdapter extends RecyclerView.Adapter<ReviewListAdapter.Vi
         memberInfoItem = ((MyApp) context.getApplicationContext()).getMemberInfoItem();
     }
 
-
-
-    /**
-     * 특정 아이템의 변경사항을 적용하기 위해 기본 아이템을 새로운 아이템으로 변경한다.
-     * @param newItem
-     */
-    public void setItem(ReviewItem newItem) {
-        for(int i=0; i<itemList.size(); i++){
-            ReviewItem item = itemList.get(i);
-
-            if(item.reviewId == newItem.reviewId){
-                itemList.set(i, newItem);
-                notifyItemChanged(i);
-                break;
-            }
-        }
-    }
-
-    /**
-     * 현재 아이템 리스트에 새로운 아이템 리스트를 추가한다.
-     * @param itemList 새로운 아이템 리스트
-     */
-    public void addItemList(ArrayList<ReviewItem> itemList){
-        this.itemList.addAll(itemList);
-        notifyDataSetChanged();
-    }
-
-    /**
-     * 좋아요 상태를 변경한다.
-     * @param seq 리뷰 시퀀스
-     * @param keep 좋아요 유무 여부
-     */
-    private void changeItemKeep(int seq, boolean keep) {
-        for(int i=0; i<itemList.size(); i++){
-            if(itemList.get(i).reviewId == seq){
-                itemList.get(i).isLike = keep;
-                notifyItemChanged(i);
-                break;
-            }
-        }
-    }
-
     /**
      * 뷰홀더(ViewHolder)를 생성하기 위해 자동으로 호출
      * 항목을 구성하기 위한 Layout xml 파일 inflate
@@ -131,7 +89,8 @@ public class ReviewListAdapter extends RecyclerView.Adapter<ReviewListAdapter.Vi
         }
 
         //글쓴이 정보 가져오기
-        holder.name.setText(memberInfoItem.getName());
+        //holder.name.setText(memberInfoItem.getName());
+        holder.name.setText(item.getTestData());
         // ************** birthday에서 연령대 구하는 방법
         holder.age.setText(memberInfoItem.getBirth());
         //글쓴이 프로필 사진
@@ -196,4 +155,46 @@ public class ReviewListAdapter extends RecyclerView.Adapter<ReviewListAdapter.Vi
         }
     }
 }
+
+
+
+//    /**
+//     * 특정 아이템의 변경사항을 적용하기 위해 기본 아이템을 새로운 아이템으로 변경한다.
+//     * @param newItem
+//     */
+//    public void setItem(ReviewItem newItem) {
+//        for(int i=0; i<itemList.size(); i++){
+//            ReviewItem item = itemList.get(i);
+//
+//            if(item.reviewId == newItem.reviewId){
+//                itemList.set(i, newItem);
+//                notifyItemChanged(i);
+//                break;
+//            }
+//        }
+//    }
+//
+//    /**
+//     * 현재 아이템 리스트에 새로운 아이템 리스트를 추가한다.
+//     * @param itemList 새로운 아이템 리스트
+//     */
+//    public void addItemList(ArrayList<ReviewItem> itemList){
+//        this.itemList.addAll(itemList);
+//        notifyDataSetChanged();
+//    }
+//
+//    /**
+//     * 좋아요 상태를 변경한다.
+//     * @param seq 리뷰 시퀀스
+//     * @param keep 좋아요 유무 여부
+//     */
+//    private void changeItemKeep(int seq, boolean keep) {
+//        for(int i=0; i<itemList.size(); i++){
+//            if(itemList.get(i).reviewId == seq){
+//                itemList.get(i).isLike = keep;
+//                notifyItemChanged(i);
+//                break;
+//            }
+//        }
+//    }
 

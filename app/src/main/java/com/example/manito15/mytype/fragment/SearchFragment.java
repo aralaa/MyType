@@ -44,6 +44,9 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        //액션바 숨기기
+        ((MainActivity) getActivity()).getSupportActionBar().hide();
+
         Button button_filter = (Button) v.findViewById(R.id.button_filter); //필터로 검색 버튼
 
         //Toolbar toolbar = (Toolbar) v.findViewById(R.id.toolbar); //toolbar

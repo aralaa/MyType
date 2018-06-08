@@ -19,6 +19,7 @@ import com.example.manito15.mytype.adapter.ReviewListAdapter;
 import com.example.manito15.mytype.item.ReviewItem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,6 +38,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     ReviewListAdapter reviewListAdapter;
 
+    List<ReviewItem> lstReview;
+
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -50,14 +53,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         v =  inflater.inflate(R.layout.fragment_home, container, false);
 
-        return v;
-    }
+        recyclerView = (RecyclerView) v.findViewById(R.id.recyclerview); //리싸이클러뷰 가져옴
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
         linearLayoutManager = new LinearLayoutManager(context);
         linearLayoutManager.setReverseLayout(true);
         linearLayoutManager.setStackFromEnd(true);
@@ -65,6 +62,26 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         reviewListAdapter = new ReviewListAdapter(context, R.layout.row_review_list, new ArrayList<ReviewItem>());
         recyclerView.setAdapter(reviewListAdapter);
 
+        return v;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        lstReview = new ArrayList<>();
+        lstReview.add(new ReviewItem("고아라1"));
+        lstReview.add(new ReviewItem("고아라2"));
+        lstReview.add(new ReviewItem("고아라3"));
+        lstReview.add(new ReviewItem("고아라4"));
     }
 
     @Override

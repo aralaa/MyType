@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.manito15.mytype.fragment.HomeFragment;
@@ -25,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
      */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        setToolbar(R.string.title_mytype);
 
         switch (item.getItemId()) {
             case R.id.nav_home:
@@ -66,16 +70,16 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     /**
      * 툴바
      */
-//    private void setToolbar(int title) {
-//        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//        final ActionBar actionBar = getSupportActionBar();
-//
-//        if (actionBar != null) {
-//            actionBar.setDisplayHomeAsUpEnabled(true);
-//
-//        }
-//    }
+    private void setToolbar(int title) {
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        final ActionBar actionBar = getSupportActionBar();
+
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+
+        }
+    }
 
 }
 

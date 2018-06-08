@@ -39,6 +39,7 @@
                         android:id="@+id/txt_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
                         android:hint="글쓴이"/>
                     <TextView
                         android:id="@+id/txt_age"

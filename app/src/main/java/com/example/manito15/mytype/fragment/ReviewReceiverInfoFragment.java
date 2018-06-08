@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.manito15.mytype.MainActivity;
 import com.example.manito15.mytype.R;
@@ -52,19 +53,25 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
         super.onViewCreated(view, savedInstanceState);
 
         Button btn_info_next = (Button) v.findViewById(R.id.btn_info_next);
-        Button select_addlocation=(Button) v.findViewById(R.id.select_addlocation);
+        Button select_offline = (Button) v.findViewById(R.id.select_offline);
         btn_info_next.setOnClickListener(this);
+        select_offline.setOnClickListener(this);
+
 
     }
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == R.id.btn_info_next){
-            GoLib.getInstance().goFragmentBack(((AppCompatActivity)getActivity()).getSupportFragmentManager(), R.id.content_main, new ReviewWriteFragment());
-        }
-        if(v.getId() == R.id.select_addlocation){
-            //map fragment로 가는 것 코딩 필요
-        }
 
+        switch (v.getId()){
+            case R.id.btn_info_next:
+                GoLib.getInstance().goFragmentBack(((AppCompatActivity)getActivity()).getSupportFragmentManager(), R.id.content_main, new ReviewWriteFragment());
+                break;
+            case R.id.select_offline:
+                //map fragment로 가는 것 코딩 필요
+                GoLib.getInstance().goFragmentBack(((AppCompatActivity)getActivity()).getSupportFragmentManager(), R.id.content_main, new MapsFragment());
+                //Toast.makeText(context, "버튼 클릭", Toast.LENGTH_LONG).show();
+                break;
+        }
     }
 }

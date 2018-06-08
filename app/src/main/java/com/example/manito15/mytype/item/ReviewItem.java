@@ -29,6 +29,22 @@ public class ReviewItem implements Serializable {
     public boolean isLike;
     public String reviewImageFilename;
     public String hashtag;
+    public String testData;
+
+    public ReviewItem() {
+    }
+
+    public ReviewItem(String testData) {
+        this.testData = testData;
+    }
+
+    public String getTestData() {
+        return testData;
+    }
+
+    public void setTestData(String testData) {
+        this.testData = testData;
+    }
 
     public int getReviewId() {
         return reviewId;
