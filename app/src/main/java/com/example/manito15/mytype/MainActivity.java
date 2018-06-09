@@ -65,6 +65,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         HomeFragment homeFragment = new HomeFragment();
         manager.beginTransaction().replace(R.id.content_main, homeFragment, homeFragment.getTag()).commit();
 
+
+
     }
 
     /**
