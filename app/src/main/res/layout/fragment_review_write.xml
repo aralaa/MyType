@@ -5,17 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/edt_review_write"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_margin="@dimen/spacing_large"
-        android:background="@drawable/bg_round"
-        android:gravity="top"
-        android:hint="@string/input_gift_review"
-        android:padding="@dimen/spacing_large"
-        android:textSize="@dimen/text_size_small2" />
+
 
     <LinearLayout
         android:layout_width="match_parent"

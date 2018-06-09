@@ -65,7 +65,7 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
 
         switch (v.getId()){
             case R.id.btn_info_next:
-                GoLib.getInstance().goFragmentBack(((AppCompatActivity)getActivity()).getSupportFragmentManager(), R.id.content_main, new ReviewWriteFragment());
+                GoLib.getInstance().goFragmentBack(((AppCompatActivity)getActivity()).getSupportFragmentManager(), R.id.content_main, new ReviewPhotoFragment());
                 break;
             case R.id.select_offline:
                 //map fragment로 가는 것 코딩 필요
