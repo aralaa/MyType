@@ -13,9 +13,12 @@
 
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="받은사람" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/receiver"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,17 +27,24 @@
 
             <Button
                 android:id="@+id/btn_male"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button_selector"
                 android:text="@string/male" />
 
             <Button
                 android:id="@+id/btn_female"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button_selector"
                 android:text="@string/female" />
         </LinearLayout>
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimaryGrey" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,26 +53,30 @@
 
             <Button
                 android:id="@+id/btn_family"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button_selector"
                 android:text="@string/family" />
 
             <Button
                 android:id="@+id/btn_parents"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button_selector"
                 android:text="@string/parents" />
 
             <Button
                 android:id="@+id/btn_grandparents"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button_selector"
                 android:text="@string/grandparents" />
 
             <Button
                 android:id="@+id/btn_friends"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button_selector"
                 android:text="@string/friends" />
         </LinearLayout>
 
@@ -73,23 +87,31 @@
 
             <Button
                 android:id="@+id/btn_lover"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button_selector"
                 android:text="@string/lover" />
 
             <Button
                 android:id="@+id/btn_coworker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button_selector"
                 android:text="@string/coworker" />
 
             <Button
                 android:id="@+id/btn_teacher"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button_selector"
                 android:text="@string/teacher" />
         </LinearLayout>
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimaryGrey" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -97,26 +119,30 @@
 
             <Button
                 android:id="@+id/btn_teenager"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button_selector"
                 android:text="@string/teenager" />
 
             <Button
                 android:id="@+id/btn_twenty"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button_selector"
                 android:text="@string/twenty" />
 
             <Button
                 android:id="@+id/btn_thirty"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button_selector"
                 android:text="@string/thirty" />
 
             <Button
                 android:id="@+id/btn_forty"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button_selector"
                 android:text="40대" />
         </LinearLayout>
 
@@ -127,26 +153,30 @@
 
             <Button
                 android:id="@+id/btn_fifty"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button_selector"
                 android:text="@string/fifty" />
 
             <Button
                 android:id="@+id/btn_sixty"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button_selector"
                 android:text="@string/sixty" />
 
             <Button
                 android:id="@+id/btn_seventy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button_selector"
                 android:text="@string/seventy" />
 
             <Button
                 android:id="@+id/btn_eighty"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button_selector"
                 android:text="@string/eighty" />
         </LinearLayout>
 
@@ -157,38 +187,58 @@
 
             <Button
                 android:id="@+id/btn_early"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button_selector"
                 android:text="@string/early" />
 
             <Button
                 android:id="@+id/btn_mid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button_selector"
                 android:text="@string/mid" />
 
             <Button
                 android:id="@+id/btn_late"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button_selector"
                 android:text="@string/late" />
         </LinearLayout>
-
-        <TextView
+        <View
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="받은사람의 만족도" />
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimaryGrey" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="받은 사람의 만족도"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp" />
 
         <SeekBar
             android:id="@+id/seekbar"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-
-        <TextView
+        
+        <View
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="구매장소" />
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimaryGrey" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="구매 장소"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp" />
 
 
         <LinearLayout
@@ -211,7 +261,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            >
 
             <Button
                 android:id="@+id/select_offline"
@@ -226,7 +277,19 @@
                 android:text="위치추가"
                 android:visibility="invisible" />
         </LinearLayout>
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimaryGrey" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="선물의 가격대"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp" />
         <EditText
             android:id="@+id/edt_price"
             android:layout_width="match_parent"
@@ -235,6 +298,7 @@
 
         <Button
             android:id="@+id/btn_info_next"
+            android:background="@drawable/button_round"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/next"/>
