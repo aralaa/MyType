@@ -12,6 +12,4 @@ public class HomeDTO {
     public String btn_friends;
     public String btn_twenty;
 
-
-
 }

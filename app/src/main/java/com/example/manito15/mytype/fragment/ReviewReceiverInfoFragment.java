@@ -153,6 +153,8 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
         //시크바
         seekBarText = (TextView) v.findViewById(R.id.seekBarText);
         SeekBar seekBar = (SeekBar) v.findViewById(R.id.seekBar);
+
+
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {

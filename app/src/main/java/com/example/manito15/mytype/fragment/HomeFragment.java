@@ -48,7 +48,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
 
-
     //ReviewListAdapter reviewListAdapter;
     ListAdapter listAdapter;
 
@@ -56,7 +55,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private List<String> uidLists = new ArrayList<>();
     private FirebaseDatabase database;
     private FirebaseAuth auth;
-
 
     public HomeFragment() {
         // Required empty public constructor

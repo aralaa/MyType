@@ -28,6 +28,12 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
     Context context;
     View v;
 
+    TextView seekBarText_satis;
+    TextView seekBarText_price;
+
+    String satisfaction;
+    String price;
+
     public SearchFragment() {
         // Required empty public constructor
     }
@@ -51,27 +57,50 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
 
         Button button_filter = (Button) v.findViewById(R.id.button_filter); //필터로 검색 버튼
 
-        //Toolbar toolbar = (Toolbar) v.findViewById(R.id.toolbar); //toolbar
-        //setSupportActionBar(toolbar);
-
         button_filter.setOnClickListener(this);
 
-        SeekBar sb  = (SeekBar) v.findViewById(R.id.seekBar1);
+        seekBarText_satis = (TextView) v.findViewById(R.id.seekBarText_satis);
+        seekBarText_price = (TextView) v.findViewById(R.id.seekBarText_price);
 
-        sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            public void onStopTrackingTouch(SeekBar seekBar) {
+        SeekBar seekBar_satis = (SeekBar) v.findViewById(R.id.seekBar_satis);
+        SeekBar seekBar_price = (SeekBar) v.findViewById(R.id.seekBar_price);
 
+        seekBar_satis.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                seekBarText_satis.setText(Integer.toString(progress));
+                satisfaction = Integer.toString(progress);
             }
 
+            @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
 
             }
 
-            public void onProgressChanged(SeekBar seekBar, int progress,
-                                          boolean fromUser) {
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
 
             }
         });
+
+        seekBar_price.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                seekBarText_satis.setText(Integer.toString(progress));
+                price = Integer.toString(progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
 
     }
     @Override
@@ -99,5 +128,6 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
         TextView title = (TextView) v.findViewById(R.id.toolbar_title);
         title.setText("검색툴바");
     }
+
 
 }

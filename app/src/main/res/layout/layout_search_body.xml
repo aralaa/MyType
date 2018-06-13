@@ -250,12 +250,17 @@
             android:textSize="20sp" />
 
         <SeekBar
-            android:id="@+id/seekBar1"
+            android:id="@+id/seekBar_satis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:max="100"
             android:progress="50"
             android:thumb="@drawable/male" />
+        <TextView
+            android:id="@+id/seekBarText_satis"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <View
             android:layout_width="match_parent"
@@ -273,12 +278,18 @@
             android:textSize="20sp" />
 
         <SeekBar
-            android:id="@+id/seekBar2"
+            android:id="@+id/seekBar_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:max="100"
             android:progress="50"
             android:thumb="@drawable/female" />
+
+        <TextView
+            android:id="@+id/seekBarText_price"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/button_filter"
