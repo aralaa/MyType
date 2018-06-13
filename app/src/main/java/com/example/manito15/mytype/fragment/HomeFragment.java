@@ -23,6 +23,7 @@ import com.example.manito15.mytype.adapter.ReviewListAdapter;
 import com.example.manito15.mytype.item.ReviewItem;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
@@ -49,7 +50,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private List<HomeDTO> imageDTOs = new ArrayList<>(); //ImageDTO
     private List<String> uidLists = new ArrayList<>();
-    private FirebaseDatabase database;
+    //private FirebaseDatabase database;
 
     CheckBox img_like;
     private String like=null;
@@ -71,7 +72,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         //linearLayoutManager.setStackFromEnd(true);
         //reviewListAdapter = new ReviewListAdapter(context, R.layout.row_review_list, new ArrayList<ReviewItem>());
         //recyclerView.setAdapter(reviewListAdapter);
-        database = FirebaseDatabase.getInstance();
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        //database = FirebaseDatabase.getInstance();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         listAdapter = new ListAdapter();
@@ -82,7 +84,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         //    @Override
         //    public void onDataChange(DataSnapshot dataSnapshot) {
 
-        //        imageDTOs.clear();;
+        //        imageDTOs.clear();
+        //        HomeDTO imageDTO = dataSnapshot.getValue(HomeDTO.class);
                 //for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                 //     HomeDTO imageDTO = snapshot.getValue(HomeDTO.class);//ImageDTO
                 //     imageDTOs.add(imageDTO);
@@ -94,26 +97,47 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         //    }
 
-        //    @Override
-        //    public void onCancelled(DatabaseError databaseError) {
-        //        // Log.w(TAG, "Failed to read value.", databaseError.toException());
+        //   @Override
+        //   public void onCancelled(DatabaseError databaseError) {
+                // Log.w(TAG, "Failed to read value.", databaseError.toException());
         //    }
         //});
-        FirebaseDatabase.getInstance().getReference().addListenerForSingleValueEvent(new ValueEventListener() {
+        //FirebaseDatabase.getInstance().getReference().addListenerForSingleValueEvent(new ValueEventListener() {
+        //   @Override
+        //    public void onDataChange(DataSnapshot dataSnapshot) {
+        //        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+        //            Log.d("MainActivity", "Single ValueEventListener : " + snapshot.getValue());
+         //       }
+         //   }
+
+        //    @Override
+        //    public void onCancelled(DatabaseError databaseError) {
+
+        //    }
+        //});
+
+
+        DatabaseReference ref = database.getReference("images");
+
+// Attach a listener to read the data at our posts reference
+        ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    Log.d("MainActivity", "Single ValueEventListener : " + snapshot.getValue());
+                HomeDTO post = dataSnapshot.getValue(HomeDTO.class);
+                //imageDTOs.add(post);
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    HomeDTO imageDTO = snapshot.getValue(HomeDTO.class);//ImageDTO
+                    imageDTOs.add(imageDTO);
                 }
+                listAdapter.notifyDataSetChanged();
+                System.out.println(post);
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                System.out.println("The read failed: " + databaseError.getCode());
             }
         });
-
-
 
         return v;
     }
