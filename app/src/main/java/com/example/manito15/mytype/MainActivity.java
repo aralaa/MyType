@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.manito15.mytype.fragment.HomeFragment;
+import com.example.manito15.mytype.fragment.LogoutFragment;
 import com.example.manito15.mytype.fragment.MyTypeFragment;
 import com.example.manito15.mytype.fragment.SearchFragment;
 import com.example.manito15.mytype.helper.BottomNavigationViewHelper;
@@ -44,7 +45,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 return true;
             case R.id.nav_mytype:
                 MyTypeFragment myTypeFragment = new MyTypeFragment();
-                manager.beginTransaction().replace(R.id.content_main, myTypeFragment, myTypeFragment.getTag()).commit();
+                //로그아웃하려면 위에거 지우고 주석 풀어주면됨
+                //LogoutFragment logoutFragment=new LogoutFragment();
+                manager.beginTransaction().replace(R.id.content_main, myTypeFragment, myTypeFragment.getTag()).commit();//로그아웃하려면 저거 두개logoutFragment로 변경
                 return true;
         }
         return false;
