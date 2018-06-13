@@ -154,14 +154,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
-        //lstReview = new ArrayList<>();
-        //lstReview.add(new ReviewItem("고아라1"));
-        //lstReview.add(new ReviewItem("고아라2"));
-        //lstReview.add(new ReviewItem("고아라3"));
-        //lstReview.add(new ReviewItem("고아라4"));
+        
     }
 
     @Override
