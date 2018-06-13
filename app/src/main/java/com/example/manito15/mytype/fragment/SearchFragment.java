@@ -86,7 +86,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
         seekBar_price.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                seekBarText_satis.setText(Integer.toString(progress));
+                seekBarText_price.setText(Integer.toString(progress));
                 price = Integer.toString(progress);
             }
 
