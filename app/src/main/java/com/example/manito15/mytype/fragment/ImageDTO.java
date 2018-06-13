@@ -1,5 +1,8 @@
 package com.example.manito15.mytype.fragment;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by LG on 2018-06-10.
  */
@@ -36,6 +39,8 @@ public class ImageDTO {
 
     public String seekBar;
 
-
+    //좋아요 버튼
+    public int starCount = 0;
+    public Map<String, Boolean> stars = new HashMap<>();
 
 }

@@ -24,10 +24,13 @@ import com.example.manito15.mytype.MyApp;
 import com.example.manito15.mytype.R;
 import com.example.manito15.mytype.adapter.ReviewListAdapter;
 import com.example.manito15.mytype.item.ReviewItem;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.MutableData;
+import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -51,10 +54,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private List<ImageDTO> imageDTOs = new ArrayList<>(); //ImageDTO
     private List<String> uidLists = new ArrayList<>();
+    private FirebaseDatabase database;
+    private FirebaseAuth auth;
 
-
-    CheckBox img_like;
-    private String like=null;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -73,8 +75,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         //linearLayoutManager.setStackFromEnd(true);
         //reviewListAdapter = new ReviewListAdapter(context, R.layout.row_review_list, new ArrayList<ReviewItem>());
         //recyclerView.setAdapter(reviewListAdapter);
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-
+        database = FirebaseDatabase.getInstance();
+        auth = FirebaseAuth.getInstance();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         listAdapter = new ListAdapter();
@@ -126,11 +128,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                HomeDTO post = dataSnapshot.getValue(HomeDTO.class);
+                ImageDTO post = dataSnapshot.getValue(ImageDTO.class);
                 //imageDTOs.add(post);
+                imageDTOs.clear();
+                uidLists.clear();
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                     ImageDTO imageDTO = snapshot.getValue(ImageDTO.class);//ImageDTO
+                    String uidKey = snapshot.getKey();
                     imageDTOs.add(imageDTO);
+                    uidLists.add(uidKey);
                 }
                 listAdapter.notifyDataSetChanged();
                 System.out.println(post);
@@ -149,9 +155,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        //img_like=(CheckBox) v.findViewById(R.id.img_like);
-        //img_like.setOnClickListener(this);
-
     }
 
     @Override
@@ -163,19 +166,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
-        //switch (v.getId()) {
-            //case R.id.img_like:
-                //if (img_like.isChecked()) {
-                    // TODO : CheckBox is checked.
-                    //img_like.setButtonDrawable(R.drawable.ic_favorite_on_black_24dp);
-                    //like="good";
-                //} else {
-                    // TODO : CheckBox is unchecked.
-                    //img_like.setButtonDrawable(R.drawable.ic_favorite_off_black_24dp);
-                    //like=null;
-                //}
-                //break;
-        //}
+
     }
     class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -188,31 +179,74 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         }
 
         @Override
-        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
             ((CustomViewHolder)holder).txt_age.setText(imageDTOs.get(position).edt_review_write);
             Glide.with(holder.itemView.getContext()).load(imageDTOs.get(position).imageUrl).into(((CustomViewHolder)holder).imageView);
             ((CustomViewHolder)holder).txt_name.setText(imageDTOs.get(position).userId);
+            ((CustomViewHolder)holder).starButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onStarClicked(database.getReference().child("images").child(uidLists.get(position)));
+                }
+            });
 
+            if (imageDTOs.get(position).stars.containsKey(auth.getCurrentUser().getUid())) {
+                ((CustomViewHolder)holder).starButton.setImageResource(R.drawable.ic_favorite_on_black_24dp);
+
+            }else {
+                ((CustomViewHolder)holder).starButton.setImageResource(R.drawable.ic_favorite_off_black_24dp);
+            }
         }
 
         @Override
         public int getItemCount() {
             return imageDTOs.size();
         }
+        private void onStarClicked(DatabaseReference postRef) {
+            postRef.runTransaction(new Transaction.Handler() {
+                @Override
+                public Transaction.Result doTransaction(MutableData mutableData) {
+                    ImageDTO imageDTO = mutableData.getValue(ImageDTO.class);
+                    if (imageDTO == null) {
+                        return Transaction.success(mutableData);
+                    }
 
+                    if (imageDTO.stars.containsKey(auth.getCurrentUser().getUid())) {
+                        // Unstar the post and remove self from stars
+                        imageDTO.starCount = imageDTO.starCount - 1;
+                        imageDTO.stars.remove(auth.getCurrentUser().getUid());
+                    } else {
+                        // Star the post and add self to stars
+                        imageDTO.starCount = imageDTO.starCount + 1;
+                        imageDTO.stars.put(auth.getCurrentUser().getUid(), true);
+                    }
+
+                    // Set value and report transaction success
+                    mutableData.setValue(imageDTO);
+                    return Transaction.success(mutableData);
+                }
+
+                @Override
+                public void onComplete(DatabaseError databaseError, boolean b,
+                                       DataSnapshot dataSnapshot) {
+                    // Transaction completed
+
+                }
+            });
+        }
 
         private class CustomViewHolder extends RecyclerView.ViewHolder {
             ImageView imageView;
             TextView txt_name;
             TextView txt_age;
-
+            ImageView starButton;
 
             public CustomViewHolder(View view) {
                 super(view);
                 imageView = (ImageView) view.findViewById(R.id.img_review);
                 txt_name = (TextView) view.findViewById(R.id.txt_name);
                 txt_age = (TextView) view.findViewById(R.id.txt_age);
-
+                starButton = (ImageView)view.findViewById(R.id.item_starButton_imageView);
             }
         }
     }

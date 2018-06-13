@@ -65,15 +65,14 @@
             </LinearLayout>
 
             <!-- 3. 좋아요 -->
-            <CheckBox
-                android:id="@+id/img_like"
+            <ImageView
+                android:id="@+id/item_starButton_imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="@dimen/spacing_medium"
                 android:gravity="right"
-                android:button="@drawable/ic_favorite_off_black_24dp" />
+                android:src="@drawable/ic_favorite_off_black_24dp" />
         </LinearLayout>
 
         <!-- 카드뷰 (사진) -->
