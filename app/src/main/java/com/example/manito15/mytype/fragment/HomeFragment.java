@@ -42,15 +42,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
-    //TextView noDataText;
+
 
     //ReviewListAdapter reviewListAdapter;
     ListAdapter listAdapter;
     //List<ReviewItem> lstReview;
 
-    private List<HomeDTO> imageDTOs = new ArrayList<>(); //ImageDTO
+    private List<ImageDTO> imageDTOs = new ArrayList<>(); //ImageDTO
     private List<String> uidLists = new ArrayList<>();
-    //private FirebaseDatabase database;
+
 
     CheckBox img_like;
     private String like=null;
@@ -73,7 +73,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         //reviewListAdapter = new ReviewListAdapter(context, R.layout.row_review_list, new ArrayList<ReviewItem>());
         //recyclerView.setAdapter(reviewListAdapter);
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //database = FirebaseDatabase.getInstance();
+
 
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         listAdapter = new ListAdapter();
@@ -126,7 +126,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 HomeDTO post = dataSnapshot.getValue(HomeDTO.class);
                 //imageDTOs.add(post);
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    HomeDTO imageDTO = snapshot.getValue(HomeDTO.class);//ImageDTO
+                    ImageDTO imageDTO = snapshot.getValue(ImageDTO.class);//ImageDTO
                     imageDTOs.add(imageDTO);
                 }
                 listAdapter.notifyDataSetChanged();
@@ -154,7 +154,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+
     }
 
     @Override

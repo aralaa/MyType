@@ -8,6 +8,9 @@ public class HomeDTO {
     public String edt_review_write;
     public String imageUrl;
     public String userId;
+    public String btn_female;
+    public String btn_friends;
+    public String btn_twenty;
 
 
 
