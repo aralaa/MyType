@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,10 +38,9 @@ import java.util.List;
  */
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
-    private final String TAG = this.getClass().getSimpleName();
-
-    View v;
+    private final String TAG = "HomeFragment";
     Context context;
+    View v;
 
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
@@ -46,7 +48,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     //ReviewListAdapter reviewListAdapter;
     ListAdapter listAdapter;
-    //List<ReviewItem> lstReview;
 
     private List<ImageDTO> imageDTOs = new ArrayList<>(); //ImageDTO
     private List<String> uidLists = new ArrayList<>();
@@ -78,6 +79,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         listAdapter = new ListAdapter();
         recyclerView.setAdapter(listAdapter);
+
+        setupToolbar(); //툴바 셋팅
 
 
         //database.getReference().child("images").addValueEventListener(new ValueEventListener() {
@@ -212,6 +215,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             }
         }
+    }
+
+    /**
+     * Toolbar Setup
+     */
+    private void setupToolbar(){
+        Log.d(TAG, "setupToolbar: Toolbar 셋팅");
+
+        final Toolbar toolbar = (Toolbar) v.findViewById(R.id.toolbar);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        final ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
+        actionBar.setDisplayShowTitleEnabled(false);
+
+        TextView title = (TextView) v.findViewById(R.id.toolbar_title);
+        title.setText("취향저격");
     }
 
 }

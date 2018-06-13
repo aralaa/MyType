@@ -19,6 +19,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.manito15.mytype.MainActivity;
@@ -81,6 +83,9 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
     private String mid=null;
     private String late=null;
 
+    //시크바
+    private String satisfaction;
+
     CheckBox btn_male;
     CheckBox btn_female;
 
@@ -103,6 +108,10 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
     CheckBox btn_early;
     CheckBox btn_mid;
     CheckBox btn_late;
+
+
+
+    TextView seekBarText;
 
 
     public ReviewReceiverInfoFragment() {
@@ -141,6 +150,26 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
         //btn_info_next.setOnClickListener(this);
         select_offline.setOnClickListener(this);
 
+        //시크바
+        seekBarText = (TextView) v.findViewById(R.id.seekBarText);
+        SeekBar seekBar = (SeekBar) v.findViewById(R.id.seekBar);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                seekBarText.setText(Integer.toString(progress));
+                satisfaction = Integer.toString(progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
 
         //////////////////////*************
         Button btn_prev = (Button) v.findViewById(R.id.btn_prev);
@@ -534,6 +563,9 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
                 imageDTO.btn_early=early;
                 imageDTO.btn_mid=mid;
                 imageDTO.btn_late=late;
+
+                //시크바
+                imageDTO.seekBar = satisfaction;
 
                 database.getReference().child("images").push().setValue(imageDTO);
 

@@ -1,5 +1,6 @@
 package com.example.manito15.mytype.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.design.widget.TabLayout;
@@ -7,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +22,8 @@ import com.example.manito15.mytype.adapter.MyTypeViewPagerAdapter;
  */
 public class MyTypeFragment extends Fragment {
 
+    private final String TAG = "HomeFragment";
+    Context context;
     View v;
 
     private TabLayout tabLayout;
@@ -34,6 +38,8 @@ public class MyTypeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_my_type, container, false);
+
+        setupToolbar(); //툴바
 
         tabLayout = (TabLayout) v.findViewById(R.id.tablayout);
         viewPager = (ViewPager) v.findViewById(R.id.viewpager);
@@ -51,6 +57,21 @@ public class MyTypeFragment extends Fragment {
 
         return v;
 
+    }
+
+    /**
+     * Toolbar Setup
+     */
+    private void setupToolbar(){
+        Log.d(TAG, "setupToolbar: Toolbar 셋팅");
+
+        final Toolbar toolbar = (Toolbar) v.findViewById(R.id.toolbar);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        final ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
+        actionBar.setDisplayShowTitleEnabled(false);
+
+        TextView title = (TextView) v.findViewById(R.id.toolbar_title);
+        title.setText("나의취향");
     }
 
 }

@@ -34,6 +34,8 @@ public class ImageDTO {
     public String btn_mid;
     public String btn_late;
 
+    public String seekBar;
+
 
 
 }

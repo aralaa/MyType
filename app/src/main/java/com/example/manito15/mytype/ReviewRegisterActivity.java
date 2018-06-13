@@ -28,38 +28,38 @@ public class ReviewRegisterActivity extends AppCompatActivity {
 
         context = this;
 
-        setToolbar();
+        //setToolbar();
 
         // ReviewReceiverInfoFragment를 화면에 보여준다.
         GoLib.getInstance().goFragment(getSupportFragmentManager(), R.id.content_main, new ReviewReceiverInfoFragment());
     }
 
-    /**
-     * 툴바 설정
-     */
-    private void setToolbar(){
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        ActionBar actionBar = getSupportActionBar();
-
-        TextView title = toolbar.findViewById(R.id.toolbar_title);
-        TextView close = toolbar.findViewById(R.id.toolbar_right);
-
-        if(actionBar != null){
-            actionBar.setDisplayShowTitleEnabled(false);
-            title.setText(R.string.title_review);
-            close.setText(R.string.close);
-
-            close.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
-            });
-        }
-    }
+//    /**
+//     * 툴바 설정
+//     */
+//    private void setToolbar(){
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//
+//        ActionBar actionBar = getSupportActionBar();
+//
+//        TextView title = toolbar.findViewById(R.id.toolbar_title);
+//        TextView close = toolbar.findViewById(R.id.toolbar_right);
+//
+//        if(actionBar != null){
+//            actionBar.setDisplayShowTitleEnabled(false);
+//            title.setText(R.string.title_review);
+//            close.setText(R.string.close);
+//
+//            close.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//                    startActivity(intent);
+//                    finish();
+//                }
+//            });
+//        }
+//    }
 
 }

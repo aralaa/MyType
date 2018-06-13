@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        setToolbar(R.string.title_mytype);
-
         switch (item.getItemId()) {
             case R.id.nav_home:
                 HomeFragment homeFragment = new HomeFragment();
@@ -65,22 +63,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         HomeFragment homeFragment = new HomeFragment();
         manager.beginTransaction().replace(R.id.content_main, homeFragment, homeFragment.getTag()).commit();
 
-
-
-    }
-
-    /**
-     * 툴바
-     */
-    private void setToolbar(int title) {
-        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        final ActionBar actionBar = getSupportActionBar();
-
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-
-        }
     }
 
 }

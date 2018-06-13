@@ -9,9 +9,6 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <include layout="@layout/tool_bar"
-        android:visibility="visible"/>
-
     <FrameLayout
         android:id="@+id/content_main"
         android:layout_width="match_parent"

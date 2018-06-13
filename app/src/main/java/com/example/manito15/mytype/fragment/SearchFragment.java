@@ -1,18 +1,20 @@
 package com.example.manito15.mytype.fragment;
 
 
-import android.app.Activity;
-import android.content.Intent;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SeekBar;
-import android.widget.Toolbar;
+import android.widget.TextView;
 
 import com.example.manito15.mytype.MainActivity;
 import com.example.manito15.mytype.R;
@@ -22,7 +24,8 @@ import com.example.manito15.mytype.R;
  */
 public class SearchFragment extends Fragment implements View.OnClickListener{
 
-    Activity context;
+    private final String TAG = "HomeFragment";
+    Context context;
     View v;
 
     public SearchFragment() {
@@ -38,14 +41,13 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
         context = this.getActivity();
         v =  inflater.inflate(R.layout.fragment_search, container, false);
 
+        setupToolbar(); //툴바 셋팅
+
         return v;
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        //액션바 숨기기
-        ((MainActivity) getActivity()).getSupportActionBar().hide();
 
         Button button_filter = (Button) v.findViewById(R.id.button_filter); //필터로 검색 버튼
 
@@ -81,6 +83,21 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
 
         }
 
+    }
+
+    /**
+     * Toolbar Setup
+     */
+    private void setupToolbar(){
+        Log.d(TAG, "setupToolbar: Toolbar 셋팅");
+
+        final android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) v.findViewById(R.id.toolbar);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        final ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
+        actionBar.setDisplayShowTitleEnabled(false);
+
+        TextView title = (TextView) v.findViewById(R.id.toolbar_title);
+        title.setText("검색툴바");
     }
 
 }
