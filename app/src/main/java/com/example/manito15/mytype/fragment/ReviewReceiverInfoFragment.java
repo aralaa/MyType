@@ -242,16 +242,15 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
 
         Intent intent;
         switch (v.getId()){
-            //case R.id.btn_info_next:
-            //GoLib.getInstance().goFragmentBack(((AppCompatActivity)getActivity()).getSupportFragmentManager(), R.id.content_main, new ReviewPhotoFragment());
-            //break;
             case R.id.select_offline:
                 //map fragment로 가는 것 코딩 필요
                 GoLib.getInstance().goFragmentBack(((AppCompatActivity)getActivity()).getSupportFragmentManager(), R.id.content_main, new MapsFragment());
                 //Toast.makeText(context, "버튼 클릭", Toast.LENGTH_LONG).show();
                 break;
             case R.id.btn_prev:
-                GoLib.getInstance().goBackFragment(((AppCompatActivity)getActivity()).getSupportFragmentManager());
+                //GoLib.getInstance().goBackFragment(((AppCompatActivity)getActivity()).getSupportFragmentManager());
+                intent = new Intent(((AppCompatActivity)getActivity()).getApplicationContext(), MainActivity.class);
+                startActivity(intent);
                 break;
             case R.id.btn_complete:
                 upload(imagePath);
@@ -557,6 +556,7 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
                 imageDTO.btn_teenager=teenager;
                 imageDTO.btn_twenty=twenty;
                 imageDTO.btn_thirty=thirty;
+                imageDTO.btn_thirty=forty;
                 imageDTO.btn_fifty=fifty;
                 imageDTO.btn_sixty=sixty;
                 imageDTO.btn_seventy=seventy;

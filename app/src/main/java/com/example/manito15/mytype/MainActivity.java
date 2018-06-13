@@ -44,10 +44,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 finish();
                 return true;
             case R.id.nav_mytype:
-                MyTypeFragment myTypeFragment = new MyTypeFragment();
+                //MyTypeFragment myTypeFragment = new MyTypeFragment();
                 //로그아웃하려면 위에거 지우고 주석 풀어주면됨
-                //LogoutFragment logoutFragment=new LogoutFragment();
-                manager.beginTransaction().replace(R.id.content_main, myTypeFragment, myTypeFragment.getTag()).commit();//로그아웃하려면 저거 두개logoutFragment로 변경
+                LogoutFragment logoutFragment=new LogoutFragment();
+                manager.beginTransaction().replace(R.id.content_main, logoutFragment, logoutFragment.getTag()).commit();//로그아웃하려면 저거 두개logoutFragment로 변경
                 return true;
         }
         return false;
