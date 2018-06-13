@@ -80,7 +80,7 @@ public class ReviewListAdapter extends RecyclerView.Adapter<ReviewListAdapter.Vi
         Log.d(TAG, "getView " + item);
 
         // 리뷰 이미지 연결
-        Glide.with(context).load(item.getReviewImageFilename()).centerCrop().into(holder.imgReview);
+        //Glide.with(context).load(item.getReviewImageFilename()).centerCrop().into(holder.imgReview); //에러나서 일단 주석해놓음(0612)
         //좋아요
         if(item.isLike) {
             holder.imgLike.setImageResource(R.drawable.ic_favorite_on_black_24dp);
@@ -94,7 +94,7 @@ public class ReviewListAdapter extends RecyclerView.Adapter<ReviewListAdapter.Vi
         // ************** birthday에서 연령대 구하는 방법
         holder.age.setText(memberInfoItem.getBirth());
         //글쓴이 프로필 사진
-        Glide.with(context).load(memberInfoItem.getProfileImageFilename()).centerCrop().into(holder.imgProfie);
+        //Glide.with(context).load(memberInfoItem.getProfileImageFilename()).centerCrop().into(holder.imgProfie); //에러나서 일단 주석해놓음(0612)
         //등록일
         holder.regDate.setText(getDiffTimeText(item.getRegDate()));
     }
