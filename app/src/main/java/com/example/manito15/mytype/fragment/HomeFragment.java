@@ -9,21 +9,16 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.manito15.mytype.MyApp;
 import com.example.manito15.mytype.R;
-import com.example.manito15.mytype.adapter.ReviewListAdapter;
-import com.example.manito15.mytype.item.ReviewItem;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -67,7 +62,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 //        memberId = ((MyApp)this.getActivity().getApplicationContext()).getMemberId();
 
         v =  inflater.inflate(R.layout.fragment_home, container, false);
-        recyclerView = (RecyclerView) v.findViewById(R.id.recyclerview); //리싸이클러뷰 가져옴
+        recyclerView = (RecyclerView) v.findViewById(R.id.recyclerv_view); //리싸이클러뷰 가져옴
 
         //linearLayoutManager.setReverseLayout(true);
         //linearLayoutManager.setStackFromEnd(true);
@@ -263,5 +258,4 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         TextView title = (TextView) v.findViewById(R.id.toolbar_title);
         title.setText("취향저격");
     }
-
 }

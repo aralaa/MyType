@@ -2,33 +2,27 @@ package com.example.manito15.mytype.fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.MenuItemCompat;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.SearchView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.example.manito15.mytype.MainActivity;
 import com.example.manito15.mytype.R;
+import com.example.manito15.mytype.ResultActivity;
 
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -39,16 +33,13 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
     Context context;
     View v;
 
-
     RecyclerView recyclerView;
 
-
-
     TextView seekBarText_satis;
-    TextView seekBarText_price;
 
     String satisfaction;
-    String price;
+    String minPrice;
+    String maxPrice;
 
     CheckBox btn_male;
     CheckBox btn_female;
@@ -108,7 +99,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
         // Inflate the layout for this fragment
         context = this.getActivity();
         v =  inflater.inflate(R.layout.fragment_search, container, false);
-        recyclerView = (RecyclerView) v.findViewById(R.id.recyclerview); //리싸이클러뷰 가져옴
+        recyclerView = (RecyclerView) v.findViewById(R.id.recyclerv_view); //리싸이클러뷰 가져옴
 
         setupToolbar(); //툴바 셋팅
 
@@ -174,12 +165,11 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
         btn_late.setOnClickListener(this);
 
         seekBarText_satis = (TextView) v.findViewById(R.id.seekBarText_satis);
-        seekBarText_price = (TextView) v.findViewById(R.id.seekBarText_price);
 
         SeekBar seekBar_satis = (SeekBar) v.findViewById(R.id.seekBar_satis);
-        SeekBar seekBar_price = (SeekBar) v.findViewById(R.id.seekBar_price);
 
         seekBar_satis.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 seekBarText_satis.setText(Integer.toString(progress)+"%");
@@ -197,23 +187,6 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
             }
         });
 
-        seekBar_price.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                seekBarText_price.setText(Integer.toString(progress)+"원");
-                price = Integer.toString(progress);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
 
 
     }
@@ -221,6 +194,8 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.button_filter: //필터로 검색 버튼
+                Intent intent = new Intent(getActivity(), ResultActivity.class);
+                startActivity(intent);
                 break;
             case R.id.btn_male:
                 if (btn_male.isChecked()) {

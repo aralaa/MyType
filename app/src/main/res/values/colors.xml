@@ -6,4 +6,10 @@
     <color name="colorAccent">#FC9B4B</color>
     <color name="colorWine">#B70037</color>
     <color name="colorPrimaryLightGrey">#D8D8D8</color>
+    <color name="skyblue">#66ccff</color>
+    <color name="hashtag">#3366ff</color>0
+    <color name="grey">#bfbfbf</color>
+    <color name="white">#fff</color>
+    <color name="black">#000000</color>
+    <color name="imgbackground">#f0f5f5</color>
 </resources>

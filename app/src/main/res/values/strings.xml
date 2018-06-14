@@ -7,6 +7,9 @@
     <string name="title_review">후기등록</string>
     <string name="title_mytype">나의취향</string>
 
+    <!-- Database nodes -->
+    <string name="node_users">users</string>
+
     <!-- 권한 화면 -->
     <string name="permission_setting_title">권한설정</string>
     <string name="permission_setting_message">앱을 실행하기 위해서는 권한 설정을 해야합니다.</string>
@@ -63,6 +66,8 @@
     <string name="location">위치 등록</string>
     <string name="register">등록</string>
     <string name="logout">로그아웃</string>
+
+    <string name="sampletext">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
 
 
 </resources>
