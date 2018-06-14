@@ -287,8 +287,8 @@
             android:id="@+id/button_filter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@color/colorPrimary"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_round"
             android:text="필터로 검색하기" />
     </LinearLayout>
 </ScrollView>

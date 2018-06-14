@@ -39,6 +39,8 @@ public class ImageDTO {
 
     public String seekBar;
 
+    public String onlineURL;
+
     //좋아요 버튼
     public int starCount = 0;
     public Map<String, Boolean> stars = new HashMap<>();

@@ -5,6 +5,7 @@
     android:orientation="vertical"
     tools:context="com.example.manito15.mytype.fragment.MapsFragment">
 
+    <include layout="@layout/layout_toolbar_with_exit" />
 
 
     <!-- TODO: Update blank fragment layout -->

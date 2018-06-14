@@ -17,12 +17,12 @@
             android:layout_marginTop="16dp">
 
             <!-- 1. 프로필 사진-->
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/img_profie"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:src="@drawable/ic_profile" />
+                android:src="@drawable/profile" />
 
             <!-- 2. 이름, 성별, 나이, 날짜-->
             <LinearLayout
@@ -40,7 +40,8 @@
                         android:id="@+id/txt_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="글쓴이"
+                        android:hint="모모"
+                        android:textStyle="bold"
                         android:textColor="@android:color/black" />
 
                     <TextView
@@ -48,14 +49,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/spacing_8dp"
-                        android:hint="20대" />
+                        android:hint="( 20대" />
 
                     <TextView
                         android:id="@+id/txt_age_range"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/spacing_4dp"
-                        android:hint="초" />
+                        android:hint="초 )" />
                 </LinearLayout>
                 <!-- 날짜-->
                 <TextView
@@ -101,14 +102,14 @@
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:text="부모님"
+                android:text="연인"
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/txtReceiverGender"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:text="여자"
+                android:text="남자"
                 android:textSize="16sp" />
 
             <TextView
@@ -146,7 +147,7 @@
                 android:id="@+id/txtReceiverSatis"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:text="여자"
+                android:text="95%"
                 android:textSize="16sp" />
         </LinearLayout>
 
@@ -168,9 +169,9 @@
 
             <TextView
                 android:id="@+id/txtPrice"
-                android:layout_width="60dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3000"
+                android:text="56000 원"
                 android:textSize="16sp" />
         </LinearLayout>
 
@@ -187,7 +188,7 @@
                 android:layout_height="300dp"
                 android:layout_marginTop="16dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/sample01" />
+                android:src="@drawable/sample06" />
 
             <TextView
                 android:id="@+id/hashtag"
@@ -196,7 +197,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="16dp"
-                android:text="3000"
+                android:text="#남친선물 #햇박스 #장미 #200일기념"
                 android:textColor="@color/hashtag"
                 android:textSize="15dp" />
 

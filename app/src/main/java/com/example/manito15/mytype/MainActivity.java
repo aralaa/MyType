@@ -68,5 +68,18 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        HomeFragment homeFragment = new HomeFragment();
+        manager.beginTransaction().replace(R.id.content_main, homeFragment, homeFragment.getTag()).commit();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+//        HomeFragment homeFragment = new HomeFragment();
+//        manager.beginTransaction().replace(R.id.content_main, homeFragment, homeFragment.getTag()).commit();
+    }
 }
 

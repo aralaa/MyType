@@ -2,6 +2,7 @@ package com.example.manito15.mytype;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -46,7 +47,7 @@ public class PostActivity extends AppCompatActivity {
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -90,15 +91,15 @@ public class PostActivity extends AppCompatActivity {
         mAgeRange.setText(ageRange);
         mRegDate.setText(regDate);
 
-        Glide.with(this)
-                .asBitmap()
-                .load(imgProfile)
-                .into(mImgProfile);
-
-        Glide.with(this)
-                .asBitmap()
-                .load(imgReview)
-                .into(mImgReview);
+//        Glide.with(mContext)
+//                .asBitmap()
+//                .load(imgProfile)
+//                .into(mImgProfile);
+//
+//        Glide.with(mContext)
+//                .asBitmap()
+//                .load(imgReview)
+//                .into(mImgReview);
 
     }
 }

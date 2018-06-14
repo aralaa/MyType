@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp">
+    android:layout_margin="10dp"
+    android:stackFromBottom="true">
 
     <LinearLayout
         android:orientation="vertical"
@@ -92,7 +93,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/sample01"/>
+            android:background="@color/colorPrimaryLightGrey"/>
 
     </LinearLayout>
 </LinearLayout>

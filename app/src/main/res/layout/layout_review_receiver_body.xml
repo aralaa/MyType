@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/spacing_16dp">
+
+            <ImageView
+                android:id="@+id/gift_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@color/imgbackground"
+                android:scaleType="fitCenter" />
+
+            <Button
+                android:id="@+id/btn_camera"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_camera_black_24dp"
+                android:elevation="4dp"
+                android:padding="8dp"
+                android:scaleType="fitCenter" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/spacing_16dp"
+            android:layout_marginRight="@dimen/spacing_16dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edt_review_write"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:gravity="top"
+                android:hint="@string/input_gift_review"
+                android:maxLines="7"
+                android:padding="@dimen/spacing_16dp"
+                android:textSize="@dimen/text_size_small2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_16dp"
+                android:layout_marginTop="@dimen/spacing_16dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/receiver"
+                android:textSize="@dimen/text_size_19"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_16dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+
+                <CheckBox
+                    android:id="@+id/btn_male"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:button="@drawable/uncheck"
+                    android:text="@string/male" />
+
+                <CheckBox
+                    android:id="@+id/btn_female"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:button="@drawable/uncheck"
+                    android:text="@string/female" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_16dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/btn_family"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:button="@drawable/uncheck"
+                    android:text="@string/family" />
+
+                <CheckBox
+                    android:id="@+id/btn_parents"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:button="@drawable/uncheck"
+                    android:text="@string/parents" />
+
+                <CheckBox
+                    android:id="@+id/btn_grandparents"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:button="@drawable/uncheck"
+                    android:text="@string/grandparents" />
+
+                <CheckBox
+                    android:id="@+id/btn_friends"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:button="@drawable/uncheck"
+                    android:text="@string/friends" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_16dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/btn_lover"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:button="@drawable/uncheck"
+                    android:text="@string/lover" />
+
+                <CheckBox
+                    android:id="@+id/btn_coworker"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:button="@drawable/uncheck"
+                    android:text="@string/coworker" />
+
+                <CheckBox
+                    android:id="@+id/btn_teacher"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:button="@drawable/uncheck"
+                    android:text="@string/teacher" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_16dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/btn_teenager"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:button="@drawable/uncheck"
+                    android:text="@string/teenager" />
+
+                <CheckBox
+                    android:id="@+id/btn_twenty"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:button="@drawable/uncheck"
+                    android:text="@string/twenty" />
+
+                <CheckBox
+                    android:id="@+id/btn_thirty"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:button="@drawable/uncheck"
+                    android:text="@string/thirty" />
+
+                <CheckBox
+                    android:id="@+id/btn_forty"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:button="@drawable/uncheck"
+                    android:text="40대" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_16dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/btn_fifty"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:button="@drawable/uncheck"
+                    android:text="@string/fifty" />
+
+                <CheckBox
+                    android:id="@+id/btn_sixty"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:button="@drawable/uncheck"
+                    android:text="@string/sixty" />
+
+                <CheckBox
+                    android:id="@+id/btn_seventy"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:button="@drawable/uncheck"
+                    android:text="@string/seventy" />
+
+                <CheckBox
+                    android:id="@+id/btn_eighty"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:button="@drawable/uncheck"
+                    android:text="@string/eighty" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_16dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/btn_early"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:button="@drawable/uncheck"
+                    android:text="@string/early" />
+
+                <CheckBox
+                    android:id="@+id/btn_mid"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:button="@drawable/uncheck"
+                    android:text="@string/mid" />
+
+                <CheckBox
+                    android:id="@+id/btn_late"
+                    android:layout_width="80dp"
+                    android:layout_height="28dp"
+                    android:button="@drawable/uncheck"
+                    android:text="@string/late" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/spacing_16dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="받은 사람의 만족도"
+                    android:textStyle="bold"
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:id="@+id/seekBarText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="19sp"
+                    android:layout_marginLeft="@dimen/spacing_16dp"
+                    android:text="0"/>
+
+
+            </LinearLayout>
+
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_16dp"
+                android:layout_marginRight="@dimen/spacing_16dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_16dp"
+                android:layout_marginTop="@dimen/spacing_16dp"
+                android:layout_marginBottom="10dp"
+                android:text="구매장소"
+                android:textStyle="bold"
+                android:textSize="19sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_16dp">
+
+                <Button
+                    android:id="@+id/btn_online"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/online"
+                    android:textSize="@dimen/text_size_16"/>
+
+                <EditText
+                    android:id="@+id/edt_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/spacing_16dp"
+                    android:hint="주소를 입력해주세요."
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/spacing_16dp">
+
+                <Button
+                    android:id="@+id/select_offline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/offline" />
+
+                <Button
+                    android:id="@+id/select_addlocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="위치추가"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edt_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_16dp"
+                android:layout_marginLeft="@dimen/spacing_16dp"
+                android:inputType="number"
+                android:hint="선물의 가격을 입력해주세요." />
+
+            <!--<Button
+                android:id="@+id/btn_info_next"
+                android:background="@drawable/button_round"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/next"/>-->
+
+            <LinearLayout
+                android:id="@+id/bottom_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="@dimen/spacing_24dp"
+                android:layout_marginLeft="@dimen/spacing_16dp"
+                android:layout_marginRight="@dimen/spacing_16dp"
+                android:layout_marginBottom="@dimen/spacing_10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_prev"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/spacing_small"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_round"
+                    android:text="@string/prev"
+                    android:textSize="@dimen/text_size_small2" />
+
+                <Button
+                    android:id="@+id/btn_complete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/spacing_small"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_round"
+                    android:text="@string/complete"
+                    android:textSize="@dimen/text_size_small2" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
