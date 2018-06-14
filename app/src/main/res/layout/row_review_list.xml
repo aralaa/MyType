@@ -3,7 +3,7 @@
     android:id="@+id/parent_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/spacing_medium">
 
     <LinearLayout
@@ -81,9 +81,9 @@
         <ImageView
             android:id="@+id/img_review"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="250dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/sample01"/>
+            android:src="@color/grey"/>
 
     </LinearLayout>
 
