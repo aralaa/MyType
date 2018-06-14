@@ -5,7 +5,7 @@
     android:orientation="vertical"
     tools:context="com.example.manito15.mytype.fragment.MapsFragment">
 
-    <include layout="@layout/tool_bar"/>
+
 
     <!-- TODO: Update blank fragment layout -->
     <fragment
@@ -16,6 +16,7 @@
         android:layout_margin="20dp"
         />
     <Button
+        android:id="@+id/goback"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"

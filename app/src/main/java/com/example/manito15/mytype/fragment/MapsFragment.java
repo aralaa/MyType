@@ -11,11 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.manito15.mytype.R;
+import com.example.manito15.mytype.lib.GoLib;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MapsFragment extends Fragment {
+public class MapsFragment extends Fragment implements View.OnClickListener{
 
 
     public MapsFragment() {
@@ -45,4 +46,13 @@ public class MapsFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.goback:
+                //돌아가는 것 코딩 필요
+                GoLib.getInstance().goFragmentBack(((AppCompatActivity)getActivity()).getSupportFragmentManager(), R.id.content_main, new ReviewReceiverInfoFragment());
+                //Toast.makeText(context, "버튼 클릭", Toast.LENGTH_LONG).show();
+                break;}
+    }
 }
