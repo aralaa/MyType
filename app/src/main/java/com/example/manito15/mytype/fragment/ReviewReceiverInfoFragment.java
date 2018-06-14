@@ -158,7 +158,7 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                seekBarText.setText(Integer.toString(progress));
+                seekBarText.setText(Integer.toString(progress)+"%");
                 satisfaction = Integer.toString(progress);
             }
 
@@ -576,4 +576,5 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
         });
 
     }
+
 }

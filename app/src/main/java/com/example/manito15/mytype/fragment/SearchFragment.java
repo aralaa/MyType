@@ -182,7 +182,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
         seekBar_satis.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                seekBarText_satis.setText(Integer.toString(progress));
+                seekBarText_satis.setText(Integer.toString(progress)+"%");
                 satisfaction = Integer.toString(progress);
             }
 
@@ -200,7 +200,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
         seekBar_price.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                seekBarText_price.setText(Integer.toString(progress));
+                seekBarText_price.setText(Integer.toString(progress)+"원");
                 price = Integer.toString(progress);
             }
 
