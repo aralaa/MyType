@@ -1,19 +1,18 @@
-package com.example.manito15.mytype;
+package com.example.manito15.mytype.App;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.example.manito15.mytype.fragment.HomeFragment;
-import com.example.manito15.mytype.fragment.LogoutFragment;
-import com.example.manito15.mytype.fragment.MyTypeFragment;
-import com.example.manito15.mytype.fragment.SearchFragment;
+import com.example.manito15.mytype.Home.HomeFragment;
+import com.example.manito15.mytype.MyPage.MyTypeFragment;
+import com.example.manito15.mytype.R;
+import com.example.manito15.mytype.Review.ReviewRegisterActivity;
+import com.example.manito15.mytype.Search.SearchFragment;
 import com.example.manito15.mytype.helper.BottomNavigationViewHelper;
 
 /**
@@ -44,10 +43,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 finish();
                 return true;
             case R.id.nav_mytype:
-                //MyTypeFragment myTypeFragment = new MyTypeFragment();
-                //로그아웃하려면 위에거 지우고 주석 풀어주면됨
-                LogoutFragment logoutFragment=new LogoutFragment();
-                manager.beginTransaction().replace(R.id.content_main, logoutFragment, logoutFragment.getTag()).commit();//로그아웃하려면 저거 두개logoutFragment로 변경
+                MyTypeFragment myTypeFragment = new MyTypeFragment();
+                manager.beginTransaction().replace(R.id.content_main, myTypeFragment, myTypeFragment.getTag()).commit();                //로그아웃하려면 위에거 지우고 주석 풀어주면됨
+                //LogoutFragment logoutFragment=new LogoutFragment();
+                //manager.beginTransaction().replace(R.id.content_main, logoutFragment, logoutFragment.getTag()).commit();//로그아웃하려면 저거 두개logoutFragment로 변경
                 return true;
         }
         return false;
@@ -78,8 +77,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     protected void onResume() {
         super.onResume();
-//        HomeFragment homeFragment = new HomeFragment();
-//        manager.beginTransaction().replace(R.id.content_main, homeFragment, homeFragment.getTag()).commit();
+        HomeFragment homeFragment = new HomeFragment();
+        manager.beginTransaction().replace(R.id.content_main, homeFragment, homeFragment.getTag()).commit();
     }
 }
 

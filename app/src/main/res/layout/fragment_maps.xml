@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.manito15.mytype.fragment.MapsFragment">
+    tools:context="com.example.manito15.mytype.Review.MapsFragment">
 
     <include layout="@layout/layout_toolbar_with_exit" />
 

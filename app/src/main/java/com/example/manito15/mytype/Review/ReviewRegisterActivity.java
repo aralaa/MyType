@@ -1,18 +1,12 @@
-package com.example.manito15.mytype;
+package com.example.manito15.mytype.Review;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.TextView;
 
-import com.example.manito15.mytype.fragment.MapsFragment;
-import com.example.manito15.mytype.fragment.ReviewReceiverInfoFragment;
-import com.example.manito15.mytype.lib.GoLib;
+import com.example.manito15.mytype.R;
+import com.example.manito15.mytype.Review.ReviewReceiverInfoFragment;
 
 /**
  * 선물 후기 등록 액티비티

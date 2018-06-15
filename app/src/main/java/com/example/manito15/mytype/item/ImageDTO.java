@@ -1,4 +1,4 @@
-package com.example.manito15.mytype.fragment;
+package com.example.manito15.mytype.item;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.example.manito15.mytype;
+package com.example.manito15.mytype.App;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.example.manito15.mytype.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

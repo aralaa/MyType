@@ -1,23 +1,24 @@
-package com.example.manito15.mytype.fragment;
+package com.example.manito15.mytype.App;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.manito15.mytype.R;
-import com.example.manito15.mytype.lib.GoLib;
+import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BlankFragment extends Fragment implements View.OnClickListener {
+public class LogoutFragment extends Fragment {
+    private FirebaseAuth auth;
     View v;
 
-    public BlankFragment() {
+    public LogoutFragment() {
         // Required empty public constructor
     }
 
@@ -26,13 +27,13 @@ public class BlankFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        v =  inflater.inflate(R.layout.fragment_blank, container, false);
-        return v;
-    }
+        auth = FirebaseAuth.getInstance();
+        auth.signOut();
+        Intent intent = new Intent(getContext(),LoginActivity.class);
+        startActivity(intent);
+        //finish();
 
-    @Override
-    public void onClick(View v) {
-
+        return inflater.inflate(R.layout.fragment_logout, container, false);
     }
 
 }

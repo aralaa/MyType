@@ -1,4 +1,4 @@
-package com.example.manito15.mytype.fragment;
+package com.example.manito15.mytype.Review;
 
 
 import android.app.Activity;
@@ -19,8 +19,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.example.manito15.mytype.MainActivity;
+import com.example.manito15.mytype.App.MainActivity;
 import com.example.manito15.mytype.R;
+import com.example.manito15.mytype.item.ImageDTO;
 import com.example.manito15.mytype.lib.GoLib;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;

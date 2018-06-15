@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * 사용자 정보를 저장하는 객체
  */
-public class MemberInfoItem {
+public class User {
 
     public int memberId; //index
 

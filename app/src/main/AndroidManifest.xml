@@ -8,7 +8,6 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
-        android:name=".MyApp"
         android:allowBackup="true"
         android:icon="@drawable/gift_red"
         android:label="@string/app_name"
@@ -16,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".PermissionActivity"
+            android:name=".App.PermissionActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,15 +24,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".IndexActivity"
+            android:name=".App.IndexActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".JoinActivity"></activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".ReviewRegisterActivity" />
-        <activity android:name=".ResultActivity" />
-        <activity android:name=".PostActivity" />
-        <activity android:name=".SignUpActivity" />
+        <activity android:name=".App.LoginActivity" />
+        <activity android:name=".App.JoinActivity"></activity>
+        <activity android:name=".App.MainActivity"></activity>
+        <activity android:name=".Review.ReviewRegisterActivity" />
+        <activity android:name=".Review.ResultActivity" />
+        <activity android:name=".Review.PostActivity" />
+        <activity android:name=".App.SignUpActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

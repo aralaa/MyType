@@ -1,4 +1,4 @@
-package com.example.manito15.mytype;
+package com.example.manito15.mytype.App;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+
+import com.example.manito15.mytype.R;
 
 public class IndexActivity extends AppCompatActivity {
 

@@ -1,10 +1,8 @@
-package com.example.manito15.mytype.fragment;
+package com.example.manito15.mytype.Review;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,9 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.manito15.mytype.MainActivity;
 import com.example.manito15.mytype.R;
-import com.example.manito15.mytype.lib.GoLib;
 
 /**
  * A simple {@link Fragment} subclass.

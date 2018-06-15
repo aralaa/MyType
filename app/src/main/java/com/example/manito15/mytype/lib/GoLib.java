@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
-import com.example.manito15.mytype.ReviewRegisterActivity;
+import com.example.manito15.mytype.Review.ReviewRegisterActivity;
 
 /**
  * 액티비티나 프래그먼트 실행 라이브러리

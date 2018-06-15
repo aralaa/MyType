@@ -1,13 +1,10 @@
-package com.example.manito15.mytype;
+package com.example.manito15.mytype.Review;
 
-import android.app.FragmentTransaction;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -16,8 +13,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.manito15.mytype.App.MainActivity;
+import com.example.manito15.mytype.R;
 import com.example.manito15.mytype.adapter.RecyclerViewAdapter;
-import com.example.manito15.mytype.fragment.ReviewReceiverInfoFragment;
 
 import java.util.ArrayList;
 

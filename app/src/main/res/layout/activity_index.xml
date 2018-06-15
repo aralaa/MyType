@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/loading"
     android:gravity="center_horizontal|center_vertical"
-    tools:context=".IndexActivity">
+    tools:context=".App.IndexActivity">
 
     <TextView
         android:id="@+id/app_name"

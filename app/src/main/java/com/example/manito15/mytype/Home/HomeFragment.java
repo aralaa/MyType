@@ -1,7 +1,6 @@
-package com.example.manito15.mytype.fragment;
+package com.example.manito15.mytype.Home;
 
 import android.content.Context;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,22 +9,17 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.manito15.mytype.MyApp;
 import com.example.manito15.mytype.R;
-import com.example.manito15.mytype.adapter.ReviewListAdapter;
-import com.example.manito15.mytype.item.ReviewItem;
-import com.example.manito15.mytype.lib.GoLib;
+import com.example.manito15.mytype.item.ImageDTO;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -50,7 +44,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
 
-    //ReviewListAdapter reviewListAdapter;
     ListAdapter listAdapter;
 
     private List<ImageDTO> imageDTOs = new ArrayList<>(); //ImageDTO
@@ -70,17 +63,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         v =  inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerv_view); //리싸이클러뷰 가져옴
-
-        //linearLayoutManager.setReverseLayout(true);
-        //linearLayoutManager.setStackFromEnd(true);
-        //reviewListAdapter = new ReviewListAdapter(context, R.layout.row_review_list, new ArrayList<ReviewItem>());
-        //recyclerView.setAdapter(reviewListAdapter);
         database = FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         listAdapter = new ListAdapter();
         recyclerView.setAdapter(listAdapter);
+//        linearLayoutManager.setReverseLayout(true); //최근 등록 순으로 정렬
+//        linearLayoutManager.setStackFromEnd(true);
 
         setupToolbar(); //툴바 셋팅
         ImageView img_review=(ImageView) v.findViewById(R.id.img_review);

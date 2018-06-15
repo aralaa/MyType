@@ -1,4 +1,4 @@
-package com.example.manito15.mytype.fragment;
+package com.example.manito15.mytype.MyPage;
 
 import android.content.Context;
 import android.os.Bundle;

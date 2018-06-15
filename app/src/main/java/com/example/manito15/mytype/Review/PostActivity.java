@@ -1,8 +1,7 @@
-package com.example.manito15.mytype;
+package com.example.manito15.mytype.Review;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+import com.example.manito15.mytype.R;
 
 public class PostActivity extends AppCompatActivity {
 

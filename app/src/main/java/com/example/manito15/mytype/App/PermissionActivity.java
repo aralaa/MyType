@@ -1,4 +1,4 @@
-package com.example.manito15.mytype;
+package com.example.manito15.mytype.App;
 
 import android.Manifest;
 import android.content.DialogInterface;
@@ -14,6 +14,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
+
+import com.example.manito15.mytype.R;
 
 import java.util.ArrayList;
 import java.util.List;

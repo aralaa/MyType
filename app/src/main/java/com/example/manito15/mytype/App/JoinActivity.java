@@ -1,4 +1,4 @@
-package com.example.manito15.mytype;
+package com.example.manito15.mytype.App;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+
+import com.example.manito15.mytype.R;
 
 public class JoinActivity extends AppCompatActivity {
 

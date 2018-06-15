@@ -11,10 +11,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.manito15.mytype.PostActivity;
+import com.example.manito15.mytype.Review.PostActivity;
 import com.example.manito15.mytype.R;
 
 

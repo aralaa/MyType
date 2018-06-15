@@ -1,4 +1,4 @@
-package com.example.manito15.mytype.fragment;
+package com.example.manito15.mytype.Review;
 
 
 import android.app.Activity;
@@ -11,7 +11,6 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -26,12 +25,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.manito15.mytype.MainActivity;
+import com.example.manito15.mytype.App.MainActivity;
 import com.example.manito15.mytype.R;
-import com.example.manito15.mytype.lib.GoLib;
-import com.google.android.gms.maps.SupportMapFragment;
+import com.example.manito15.mytype.item.ImageDTO;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -573,7 +570,7 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
         StorageReference riversRef = storageRef.child("images/" + file.getLastPathSegment());
         UploadTask uploadTask = riversRef.putFile(file);
 
-// Register observers to listen for when the download is done or if it fails
+        // Register observers to listen for when the download is done or if it fails
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {
