@@ -53,7 +53,6 @@ public class PermissionActivity extends AppCompatActivity {
      */
     private boolean checkAndRequestPermissions(){
         String[] permissions = new String[]{
-
                 Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.READ_EXTERNAL_STORAGE
         };
