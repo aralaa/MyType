@@ -35,56 +35,21 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
     RecyclerView recyclerView;
 
     TextView seekBarText_satis;
+    String satisfaction; String minPrice; String maxPrice;
 
-    String satisfaction;
-    String minPrice;
-    String maxPrice;
+    CheckBox btn_male; CheckBox btn_female;
+    CheckBox btn_family; CheckBox btn_parents; CheckBox btn_grandparents; CheckBox btn_friends;
+    CheckBox btn_lover; CheckBox btn_coworker; CheckBox btn_teacher;
+    CheckBox btn_teenager; CheckBox btn_twenty; CheckBox btn_thirty; CheckBox btn_forty;
+    CheckBox btn_fifty; CheckBox btn_sixty; CheckBox btn_seventy; CheckBox btn_eighty;
+    CheckBox btn_early; CheckBox btn_mid; CheckBox btn_late;
 
-    CheckBox btn_male;
-    CheckBox btn_female;
-
-    CheckBox btn_family;
-    CheckBox btn_parents;
-    CheckBox btn_grandparents;
-    CheckBox btn_friends;
-    CheckBox btn_lover;
-    CheckBox btn_coworker;
-    CheckBox btn_teacher;
-    CheckBox btn_teenager;
-    CheckBox btn_twenty;
-    CheckBox btn_thirty;
-    CheckBox btn_forty;
-    CheckBox btn_fifty;
-    CheckBox btn_sixty;
-    CheckBox btn_seventy;
-    CheckBox btn_eighty;
-
-    CheckBox btn_early;
-    CheckBox btn_mid;
-    CheckBox btn_late;
-
-    private String male=null;
-    private String female=null;
-    private String family=null;
-    private String parents=null;
-    private String grandparents=null;
-    private String friends=null;
-    private String lover=null;
-    private String coworker=null;
-    private String teacher=null;
-
-    private String teenager=null;
-    private String twenty=null;
-    private String thirty=null;
-    private String forty=null;
-    private String fifty=null;
-    private String sixty=null;
-    private String seventy=null;
-    private String eighty=null;
-
-    private String early=null;
-    private String mid=null;
-    private String late=null;
+    private String male=null; private String female=null;
+    private String family=null; private String parents=null; private String grandparents=null;
+    private String friends=null; private String lover=null; private String coworker=null; private String teacher=null;
+    private String teenager=null; private String twenty=null; private String thirty=null; private String forty=null;
+    private String fifty=null; private String sixty=null; private String seventy=null; private String eighty=null;
+    private String early=null; private String mid=null; private String late=null;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -98,13 +63,12 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
         // Inflate the layout for this fragment
         context = this.getActivity();
         v =  inflater.inflate(R.layout.fragment_search, container, false);
-        recyclerView = (RecyclerView) v.findViewById(R.id.recyclerv_view); //리싸이클러뷰 가져옴
+        recyclerView = (RecyclerView) v.findViewById(R.id.recyclerv_view);
 
-        setupToolbar(); //툴바 셋팅
+        setupToolbar();
 
         return v;
     }
-
 
 
     @Override
@@ -112,7 +76,6 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
         super.onViewCreated(view, savedInstanceState);
 
         Button button_filter = (Button) v.findViewById(R.id.button_filter); //필터로 검색 버튼
-
         button_filter.setOnClickListener(this);
 
         btn_male=(CheckBox) v.findViewById(R.id.btn_male);
@@ -139,7 +102,6 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
         btn_mid=(CheckBox) v.findViewById(R.id.btn_mid);
         btn_late=(CheckBox) v.findViewById(R.id.btn_late);
 
-
         btn_male.setOnClickListener(this);
         btn_female.setOnClickListener(this);
         btn_family.setOnClickListener(this);
@@ -164,7 +126,6 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
         btn_late.setOnClickListener(this);
 
         seekBarText_satis = (TextView) v.findViewById(R.id.seekBarText_satis);
-
         SeekBar seekBar_satis = (SeekBar) v.findViewById(R.id.seekBar_satis);
 
         seekBar_satis.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -176,17 +137,11 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
+            public void onStartTrackingTouch(SeekBar seekBar) { }
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
+            public void onStopTrackingTouch(SeekBar seekBar) { }
         });
-
-
 
     }
     @Override
@@ -422,9 +377,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
 
     }
 
-    /**
-     * Toolbar Setup
-     */
+
     private void setupToolbar(){
         Log.d(TAG, "setupToolbar: Toolbar 셋팅");
 

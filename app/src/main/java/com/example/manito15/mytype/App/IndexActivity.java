@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.example.manito15.mytype.R;
 
-public class IndexActivity extends AppCompatActivity {
+public class IndexActivity extends AppCompatActivity { // splash activity형태로 구현
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class IndexActivity extends AppCompatActivity {
         TextView tv=(TextView)findViewById(R.id.app_name);
         Typeface face=Typeface.createFromAsset(getAssets(), "fonts/lotte_medium.ttf");
         tv.setTypeface(face);
+
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override

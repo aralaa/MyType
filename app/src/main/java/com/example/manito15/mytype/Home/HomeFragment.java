@@ -46,7 +46,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     ListAdapter listAdapter;
 
-    private List<ImageDTO> imageDTOs = new ArrayList<>(); //ImageDTO
+    private List<ImageDTO> imageDTOs = new ArrayList<>();
     private List<String> uidLists = new ArrayList<>();
     private FirebaseDatabase database;
     private FirebaseAuth auth;
@@ -62,7 +62,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
 
         v =  inflater.inflate(R.layout.fragment_home, container, false);
-        recyclerView = (RecyclerView) v.findViewById(R.id.recyclerv_view); //리싸이클러뷰 가져옴
+        recyclerView = (RecyclerView) v.findViewById(R.id.recyclerv_view);
         database = FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
 
@@ -73,27 +73,24 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 //        linearLayoutManager.setStackFromEnd(true);
 
         setupToolbar(); //툴바 셋팅
-        ImageView img_review=(ImageView) v.findViewById(R.id.img_review);
 
+        ImageView img_review=(ImageView) v.findViewById(R.id.img_review);
         //img_review.setOnClickListener(this);
 
+        // DB에서 정보 가져오는 방법1->error!
         //database.getReference().child("images").addValueEventListener(new ValueEventListener() {
         //    @Override
         //    public void onDataChange(DataSnapshot dataSnapshot) {
-
         //        imageDTOs.clear();
         //        HomeDTO imageDTO = dataSnapshot.getValue(HomeDTO.class);
         //for(DataSnapshot snapshot : dataSnapshot.getChildren()){
         //     HomeDTO imageDTO = snapshot.getValue(HomeDTO.class);//ImageDTO
         //     imageDTOs.add(imageDTO);
         //}
-
         //        listAdapter.notifyDataSetChanged();
         //        String value = dataSnapshot.getValue(String.class);
         //        // Log.d(TAG, "Value is: " + value);
-
         //    }
-
         //   @Override
         //   public void onCancelled(DatabaseError databaseError) {
         // Log.w(TAG, "Failed to read value.", databaseError.toException());
@@ -106,14 +103,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         //            Log.d("MainActivity", "Single ValueEventListener : " + snapshot.getValue());
         //       }
         //   }
-
         //    @Override
         //    public void onCancelled(DatabaseError databaseError) {
-
         //    }
         //});
 
-
+        // DB에서 정보 가져오는 방법2->good
         DatabaseReference ref = database.getReference("images");
 
 // Attach a listener to read the data at our posts reference
@@ -121,11 +116,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 ImageDTO post = dataSnapshot.getValue(ImageDTO.class);
-                //imageDTOs.add(post);
                 imageDTOs.clear();
                 uidLists.clear();
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    ImageDTO imageDTO = snapshot.getValue(ImageDTO.class);//ImageDTO
+                    ImageDTO imageDTO = snapshot.getValue(ImageDTO.class);
                     String uidKey = snapshot.getKey();
                     imageDTOs.add(imageDTO);
                     uidLists.add(uidKey);
@@ -146,22 +140,19 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.img_review:
+                //각각의 이미지를 누르면 그에 해당하는 자세한 내용이 나오도록 구성
                 //GoLib.getInstance().goFragmentBack(((AppCompatActivity)getActivity()).getSupportFragmentManager(), R.id.content_main, new BlankFragment());
-
                 break;
         }
 

@@ -15,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
  * A simple {@link Fragment} subclass.
  */
 public class LogoutFragment extends Fragment {
+
     private FirebaseAuth auth;
     View v;
 
@@ -31,7 +32,6 @@ public class LogoutFragment extends Fragment {
         auth.signOut();
         Intent intent = new Intent(getContext(),LoginActivity.class);
         startActivity(intent);
-        //finish();
 
         return inflater.inflate(R.layout.fragment_logout, container, false);
     }

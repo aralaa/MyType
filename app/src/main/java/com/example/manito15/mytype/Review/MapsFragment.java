@@ -29,7 +29,6 @@ public class MapsFragment extends Fragment implements View.OnClickListener{
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -44,12 +43,10 @@ public class MapsFragment extends Fragment implements View.OnClickListener{
         return view;
     }
 
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.goback:
-                //GoLib.getInstance().goFragmentBack(((AppCompatActivity) getActivity()).getSupportFragmentManager(), R.id.content_main, new ReviewReceiverInfoFragment());
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
                 fr.replace(R.id.content_main, new ReviewReceiverInfoFragment());
                 fr.commit();

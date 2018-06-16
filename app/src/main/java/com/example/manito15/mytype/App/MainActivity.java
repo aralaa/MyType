@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
+
         // 아라 : BottomNavigation 애니메이션 없애는 코드
         BottomNavigationViewHelper.disableShiftMode(navigation);
 

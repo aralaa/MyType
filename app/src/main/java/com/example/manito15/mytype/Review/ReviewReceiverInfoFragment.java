@@ -45,16 +45,10 @@ import java.io.File;
 public class ReviewReceiverInfoFragment extends Fragment implements View.OnClickListener {
 
     private final String TAG = this.getClass().getSimpleName();
-    //public static final String INFO_SEQ = "INFO_SEQ";
     Activity context;
     View v;
 
-    //FragmentManager manager = ((AppCompatActivity)getActivity()).getSupportFragmentManager();
-
-    /////////////////////////////**************
     private static final int GALLERY_CODE = 10;
-    //private final String TAG = this.getClass().getSimpleName();
-    //Activity context;
 
     private FirebaseAuth auth;
     private FirebaseStorage storage;
@@ -63,64 +57,34 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
     private ImageView gift_image;
     private EditText edt_review_write;
     private EditText edt_price;
-    //View v;
-    /////////////////////////////**************
-    private String male = null;
-    private String female = null;
-    private String family = null;
-    private String parents = null;
-    private String grandparents = null;
-    private String friends = null;
-    private String lover = null;
-    private String coworker = null;
-    private String teacher = null;
 
-    private String teenager = null;
-    private String twenty = null;
-    private String thirty = null;
-    private String forty = null;
-    private String fifty = null;
-    private String sixty = null;
-    private String seventy = null;
-    private String eighty = null;
+    // 성별, 관계 정보
+    private String male = null; private String female = null; private String family = null;
+    private String parents = null; private String grandparents = null; private String friends = null;
+    private String lover = null; private String coworker = null; private String teacher = null;
 
-    private String early = null;
-    private String mid = null;
-    private String late = null;
+    // 나이대 정보
+    private String teenager = null; private String twenty = null; private String thirty = null; private String forty = null;
+    private String fifty = null; private String sixty = null; private String seventy = null; private String eighty = null;
+    private String early = null; private String mid = null; private String late = null;
 
     //시크바
     private String satisfaction = null;
     private String onlineURL = null;
 
-    CheckBox btn_male;
-    CheckBox btn_female;
+    CheckBox btn_male; CheckBox btn_female;
 
-    CheckBox btn_family;
-    CheckBox btn_parents;
-    CheckBox btn_grandparents;
-    CheckBox btn_friends;
-    CheckBox btn_lover;
-    CheckBox btn_coworker;
-    CheckBox btn_teacher;
-    CheckBox btn_teenager;
-    CheckBox btn_twenty;
-    CheckBox btn_thirty;
-    CheckBox btn_forty;
-    CheckBox btn_fifty;
-    CheckBox btn_sixty;
-    CheckBox btn_seventy;
-    CheckBox btn_eighty;
+    CheckBox btn_family; CheckBox btn_parents; CheckBox btn_grandparents;
+    CheckBox btn_friends; CheckBox btn_lover; CheckBox btn_coworker; CheckBox btn_teacher;
 
-    CheckBox btn_early;
-    CheckBox btn_mid;
-    CheckBox btn_late;
+    CheckBox btn_teenager;CheckBox btn_twenty;CheckBox btn_thirty;CheckBox btn_forty;
+    CheckBox btn_fifty;CheckBox btn_sixty;CheckBox btn_seventy;CheckBox btn_eighty;
+
+    CheckBox btn_early;CheckBox btn_mid;CheckBox btn_late;
+
     EditText edt_url;
-
     Button btn_camera;
-
-
     TextView seekBarText;
-
 
     public ReviewReceiverInfoFragment() {
         // Required empty public constructor
@@ -134,19 +98,10 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
         context = this.getActivity();
         v = inflater.inflate(R.layout.fragment_review_receiver_info, container, false);
 
-
-        ///////////////////*****************
-
-        //v =  inflater.inflate(R.layout.fragment_review_photo, container, false);
-
         auth = FirebaseAuth.getInstance();
         storage = FirebaseStorage.getInstance();
         database = FirebaseDatabase.getInstance();
 
-
-        ///////////////////*****************
-
-        //툴바 셋팅
         setupToolbar();
 
         return v;
@@ -156,9 +111,7 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        //Button btn_info_next = (Button) v.findViewById(R.id.btn_info_next);
         Button select_offline = (Button) v.findViewById(R.id.select_offline);
-        //btn_info_next.setOnClickListener(this);
         select_offline.setOnClickListener(this);
 
         //시크바
@@ -174,21 +127,15 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
+            public void onStartTrackingTouch(SeekBar seekBar) { }
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
+            public void onStopTrackingTouch(SeekBar seekBar) { }
         });
 
-        //////////////////////*************
         Button btn_prev = (Button) v.findViewById(R.id.btn_prev);
         Button btn_complete = (Button) v.findViewById(R.id.btn_complete);
         btn_camera = (Button) v.findViewById(R.id.btn_camera);
-
 
         btn_male = (CheckBox) v.findViewById(R.id.btn_male);
         btn_female = (CheckBox) v.findViewById(R.id.btn_female);
@@ -216,10 +163,10 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
 
         edt_url = (EditText) v.findViewById(R.id.edt_url);
 
-
         gift_image = (ImageView) v.findViewById(R.id.gift_image);
         edt_review_write = (EditText) v.findViewById(R.id.edt_review_write);
         edt_price = (EditText) v.findViewById(R.id.edt_price);
+
         btn_prev.setOnClickListener(this);
         btn_complete.setOnClickListener(this);
         btn_camera.setOnClickListener(this);
@@ -248,7 +195,6 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
         btn_late.setOnClickListener(this);
         edt_url.setOnClickListener(this);
 
-        //////////////////////*************
     }
 
     @Override
@@ -267,7 +213,7 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
                 //GoLib.getInstance().goFragmentBack(((AppCompatActivity) getActivity()).getSupportFragmentManager(), R.id.content_main, new MapsFragment());
                 break;
             case R.id.btn_prev:
-//                GoLib.getInstance().goBackFragment(((AppCompatActivity)getActivity()).getSupportFragmentManager());
+                //GoLib.getInstance().goBackFragment(((AppCompatActivity)getActivity()).getSupportFragmentManager());
                 intent = new Intent(((AppCompatActivity) getActivity()).getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 break;
@@ -505,14 +451,10 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
                 }
                 break;
 
-
         }
-
     }
 
-    /**
-     * Toolbar Setup
-     */
+
     private void setupToolbar(){
         Log.d(TAG, "setupToolbar: Toolbar 셋팅");
 
@@ -533,8 +475,7 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
         });
     }
 
-
-
+    //device에 접근하여 사진 불러오기
     public String getPath(Uri uri) {
 
         String[] proj = {MediaStore.Images.Media.DATA};
@@ -546,25 +487,21 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
         cursor.moveToFirst();
 
         return cursor.getString(index);
-
     }
 
+    //사진 파일 업로드
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == GALLERY_CODE) {
 
-
             imagePath = getPath(data.getData());
             File f = new File(imagePath);
             gift_image.setImageURI(Uri.fromFile(f));
-
-
         }
     }
 
     private void upload(String uri) {
         StorageReference storageRef = storage.getReferenceFromUrl("gs://mytype-3bcda.appspot.com");
-
 
         Uri file = Uri.fromFile(new File(uri));
         StorageReference riversRef = storageRef.child("images/" + file.getLastPathSegment());
@@ -619,10 +556,7 @@ public class ReviewReceiverInfoFragment extends Fragment implements View.OnClick
 
                 database.getReference().child("images").push().setValue(imageDTO);
 
-
             }
         });
-
     }
-
 }
